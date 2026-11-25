@@ -1,0 +1,1004 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reinducción Institucional del Servicio Farmacéutico | E.S.E. Centro Hospital Luis Antonio Montero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Outfit:wght@400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- BARRA DE NAVEGACIÓN SUPERIOR TECNOLÓGICA -->
+  <header class="navbar">
+    <div class="nav-container">
+      <div class="nav-brand">
+        <img src="logo.png" alt="Logo E.S.E. Centro Hospital Luis Antonio Montero" class="nav-logo" onerror="this.style.display='none'; document.getElementById('logo-fallback').style.display='flex';">
+        <div id="logo-fallback" class="logo-fallback" style="display:none;">
+          <i class="fa-solid fa-hospital-user"></i>
+        </div>
+        <div class="brand-text">
+          <span class="hospital-name">E.S.E. Centro Hospital Luis Antonio Montero</span>
+          <span class="hospital-sub">Municipio de Potosí, Nariño • Servicio Farmacéutico Hospitalario</span>
+        </div>
+      </div>
+
+      <!-- Menú y Herramientas Tecnológicas -->
+      <div class="nav-actions">
+        <nav class="nav-quick-links">
+          <button class="nav-link-btn" onclick="cambiarEstacion(0)"><i class="fa-solid fa-house"></i> <span>Inicio</span></button>
+          <button class="nav-link-btn" onclick="abrirModalMaterial()"><i class="fa-solid fa-file-invoice"></i> <span>Infografías</span></button>
+          <button class="nav-link-btn" onclick="abrirModalNormas()"><i class="fa-solid fa-scale-balanced"></i> <span>Normatividad</span></button>
+        </nav>
+        <button id="btn-sound-toggle" class="btn-icon sound-btn" title="Efectos de interacción sonora">
+          <i class="fa-solid fa-volume-high"></i>
+        </button>
+        <button id="btn-fullscreen-toggle" class="btn-icon" title="Modo Auditorio / Pantalla Completa">
+          <i class="fa-solid fa-expand"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Barra de progreso tecnológico -->
+    <div class="mission-progress-bar-container">
+      <div class="mission-progress-bar" id="mission-progress-bar"></div>
+    </div>
+  </header>
+
+  <!-- CONTENEDOR PRINCIPAL DE MÓDULOS DE APRENDIZAJE -->
+  <main class="main-content">
+
+    <!-- ESTACIÓN 0: PORTADA INSTITUCIONAL ACADÉMICA -->
+    <section class="station-card active" id="station-0">
+      <div class="hero-container tech-portal">
+        <div class="hero-brand-card">
+          <img src="logo.png" alt="E.S.E. Centro Hospital Luis Antonio Montero" class="hero-logo-img">
+          <div>
+            <h3>E.S.E. CENTRO HOSPITAL LUIS ANTONIO MONTERO</h3>
+            <p>Municipio de Potosí, Departamento de Nariño • Primer Nivel de Atención</p>
+          </div>
+        </div>
+
+        <div class="institutional-badge">
+          <i class="fa-solid fa-hospital"></i> Capacitación y Actualización Continua en Procesos Farmacéuticos
+        </div>
+
+        <h1 class="hero-title-academic">Reinducción Institucional del Servicio Farmacéutico de la E.S.E. Centro Hospital Luis Antonio Montero</h1>
+        <p class="hero-subtitle-academic">Plataforma Educativa e Interactiva de Gestión Farmacéutica y Seguridad en el Uso de Medicamentos y Dispositivos Médicos</p>
+
+        <!-- Matriz Tecnológica de Procesos Farmacéuticos (Acceso Rápido) -->
+        <div class="portal-grid-processes">
+          <div class="process-tech-card" onclick="cambiarEstacion(1)">
+            <div class="ptc-icon"><i class="fa-solid fa-clipboard-check"></i></div>
+            <h4>1. Selección y Adquisición</h4>
+            <p>Criterios del Comité de Farmacia, programación de necesidades institucionales y compras.</p>
+            <span class="ptc-link">Explorar Módulo <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+
+          <div class="process-tech-card" onclick="cambiarEstacion(2)">
+            <div class="ptc-icon"><i class="fa-solid fa-box-open"></i></div>
+            <h4>2. Recepción Integral</h4>
+            <p>Inspección técnica (cotejo orden vs recibido, INVIMA, empaque) y recepción administrativa.</p>
+            <span class="ptc-link">Explorar Módulo <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+
+          <div class="process-tech-card" onclick="cambiarEstacion(3)">
+            <div class="ptc-icon"><i class="fa-solid fa-boxes-stacked"></i></div>
+            <h4>3. Almacenamiento & FEFO</h4>
+            <p>Organización técnica, rotación estricta Primero en Vencer, Primero en Salir y control de stock.</p>
+            <span class="ptc-link">Explorar Módulo <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+
+          <div class="process-tech-card" onclick="cambiarEstacion(4)">
+            <div class="ptc-icon"><i class="fa-solid fa-tags"></i></div>
+            <h4>4. Código de Colores</h4>
+            <p>Semáforo institucional: Rojo (Alto Riesgo), Azul (LASA) y Negro (&lt;4 meses de vida útil).</p>
+            <span class="ptc-link">Explorar Módulo <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+
+          <div class="process-tech-card" onclick="cambiarEstacion(5)">
+            <div class="ptc-icon"><i class="fa-solid fa-temperature-arrow-down"></i></div>
+            <h4>5. Temperatura y Humedad</h4>
+            <p>Temperatura ambiente &lt;30°C, cadena de frío 2°C-8°C y registro bicolor (mañana azul / tarde rojo).</p>
+            <span class="ptc-link">Explorar Módulo <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+
+          <div class="process-tech-card" onclick="cambiarEstacion(6)">
+            <div class="ptc-icon"><i class="fa-solid fa-hand-holding-medical"></i></div>
+            <h4>6. Dispensación Segura</h4>
+            <p>Atención intramural y extramural, verificación de fórmula y los 5 Correctos de la medicación.</p>
+            <span class="ptc-link">Explorar Módulo <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+
+          <div class="process-tech-card" onclick="cambiarEstacion(7)">
+            <div class="ptc-icon"><i class="fa-solid fa-key"></i></div>
+            <h4>7. Medicamentos de Control</h4>
+            <p>Custodia bajo llave, libro oficial foliado y recetario del Fondo Nacional de Estupefacientes.</p>
+            <span class="ptc-link">Explorar Módulo <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+
+          <div class="process-tech-card" onclick="cambiarEstacion(8)">
+            <div class="ptc-icon"><i class="fa-solid fa-recycle"></i></div>
+            <h4>8. Disposición Final</h4>
+            <p>Segregación, cuarentena y gestión con la empresa externa encargada de recolección de residuos.</p>
+            <span class="ptc-link">Explorar Módulo <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+
+          <div class="process-tech-card" onclick="cambiarEstacion(9)">
+            <div class="ptc-icon"><i class="fa-solid fa-hospital-user"></i></div>
+            <h4>9. Áreas Asistenciales</h4>
+            <p>Partos, ERA, EDA, Urgencias, Ambulancias y auditoría obligatoria los primeros 5 días del mes.</p>
+            <span class="ptc-link">Explorar Módulo <i class="fa-solid fa-arrow-right"></i></span>
+          </div>
+        </div>
+
+        <!-- Módulos de Evaluación Pretest & Postest -->
+        <div class="eval-banner">
+          <div class="eval-box">
+            <div class="eval-icon pre"><i class="fa-solid fa-clipboard-question"></i></div>
+            <div class="eval-details">
+              <h4>Evaluación Inicial (Pretest)</h4>
+              <p>Instrumento diagnóstico para registrar conocimientos basales desde dispositivos móviles.</p>
+            </div>
+            <a href="#" id="link-pretest" target="_blank" class="btn-eval btn-pretest" onclick="abrirModalForm('pretest'); return false;">
+              <i class="fa-solid fa-qrcode"></i> Abrir Pretest
+            </a>
+          </div>
+
+          <div class="eval-box">
+            <div class="eval-icon post"><i class="fa-solid fa-award"></i></div>
+            <div class="eval-details">
+              <h4>Evaluación de Salida (Postest)</h4>
+              <p>Validación de aprendizajes institucionales y constancia de aprobación de la reinducción.</p>
+            </div>
+            <a href="#" id="link-postest" target="_blank" class="btn-eval btn-postest" onclick="abrirModalForm('postest'); return false;">
+              <i class="fa-solid fa-square-poll-vertical"></i> Abrir Postest
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 1: SELECCIÓN Y ADQUISICIÓN -->
+    <section class="station-card" id="station-1">
+      <div class="station-header">
+        <span class="station-step">Proceso 01 / 09</span>
+        <h2>Selección y Adquisición Institucional</h2>
+        <p class="station-desc">Determinación técnica de los medicamentos y dispositivos médicos esenciales según el perfil epidemiológico del municipio de Potosí.</p>
+      </div>
+
+      <div class="cards-grid-2">
+        <div class="interactive-flip-card" onclick="voltearTarjeta(this)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front card-mint">
+              <div class="card-icon"><i class="fa-solid fa-list-check"></i></div>
+              <h3>1. Selección Institucional</h3>
+              <p class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Clic para ver detalles técnicos</p>
+              <ul class="clean-list">
+                <li><i class="fa-solid fa-check"></i> Guías de Práctica Clínica y perfil epidemiológico de Potosí.</li>
+                <li><i class="fa-solid fa-check"></i> Aprobado por el <strong>Comité de Farmacia y Terapéutica</strong>.</li>
+                <li><i class="fa-solid fa-check"></i> Listado Básico Institucional de Medicamentos y Dispositivos.</li>
+              </ul>
+            </div>
+            <div class="flip-card-back">
+              <span class="back-badge">Criterios de Calidad</span>
+              <h4>Parámetros Técnicos de Selección</h4>
+              <p>Se evalúa principio activo, eficacia, seguridad demostrada, registro sanitario INVIMA vigente y conveniencia terapéutica en el primer nivel de atención de salud.</p>
+              <div class="rule-box">
+                <i class="fa-solid fa-scale-balanced"></i> Resolución 1403 de 2007: Criterios normativos de selección.
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="interactive-flip-card" onclick="voltearTarjeta(this)">
+          <div class="flip-card-inner">
+            <div class="flip-card-front card-sky">
+              <div class="card-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+              <h3>2. Adquisición Oportuna</h3>
+              <p class="tap-hint"><i class="fa-solid fa-hand-pointer"></i> Clic para ver detalles técnicos</p>
+              <ul class="clean-list">
+                <li><i class="fa-solid fa-check"></i> Programación periódica según consumos históricos y perfil de morbilidad.</li>
+                <li><i class="fa-solid fa-check"></i> Prevención de desabastecimiento en Urgencias, Partos y Hospitalización.</li>
+                <li><i class="fa-solid fa-check"></i> Proveedores calificados con certificados de calidad sanitaria.</li>
+              </ul>
+            </div>
+            <div class="flip-card-back">
+              <span class="back-badge">Garantía de Suministro</span>
+              <h4>Disponibilidad y Oportunidad</h4>
+              <p>El plan de compras asegura stocks de seguridad y puntos de reorden, garantizando disponibilidad oportuna para la atención continua de los usuarios de la E.S.E.</p>
+              <div class="rule-box">
+                <i class="fa-solid fa-truck-medical"></i> Articulación técnica entre Farmacia, Almacén y Presupuesto.
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panel Interactivo de Criterios Técnicos -->
+      <div class="tech-explorer-box">
+        <h4><i class="fa-solid fa-diagram-project"></i> Flujo Interactivo de la Adquisición</h4>
+        <div class="flow-steps-horizontal">
+          <div class="flow-node">
+            <span class="f-num">1</span>
+            <strong>Consumo Histórico</strong>
+            <small>Cálculo de necesidades de los servicios</small>
+          </div>
+          <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          <div class="flow-node">
+            <span class="f-num">2</span>
+            <strong>Orden de Compra</strong>
+            <small>Aprobación administrativa y financiera</small>
+          </div>
+          <div class="flow-arrow"><i class="fa-solid fa-chevron-right"></i></div>
+          <div class="flow-node">
+            <span class="f-num">3</span>
+            <strong>Ingreso a Custodia</strong>
+            <small>Recepción y registro en el sistema hospitalario</small>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 2: RECEPCIÓN TÉCNICA Y ADMINISTRATIVA -->
+    <section class="station-card" id="station-2">
+      <div class="station-header">
+        <span class="station-step">Proceso 02 / 09</span>
+        <h2>Recepción Técnica y Administrativa</h2>
+        <p class="station-desc">Doble filtro de inspección para garantizar la calidad, integridad y coincidencia de los insumos que ingresan a la institución.</p>
+      </div>
+
+      <div class="dual-role-grid">
+        <div class="role-card role-aux">
+          <div class="role-badge"><i class="fa-solid fa-user-nurse"></i> A cargo de: Auxiliares del Servicio Farmacéutico</div>
+          <h3>Recepción Técnica</h3>
+          <p class="role-intro">Inspección física y verificación directa de cada lote y unidad recibida:</p>
+          <div class="checklist">
+            <label class="check-item"><input type="checkbox" checked disabled> <span><strong>Verificación de Pedido vs. Recibido:</strong> Constatación rigurosa de que lo entregado coincida exactamente con la orden solicitada.</span></label>
+            <label class="check-item"><input type="checkbox" checked disabled> <span><strong>Registro Sanitario INVIMA:</strong> Vigente, legítimo e impreso en el rotulado primario y secundario.</span></label>
+            <label class="check-item"><input type="checkbox" checked disabled> <span><strong>Fecha de Vencimiento y Lote:</strong> Inspección de caducidad superior a la vida útil mínima convenida.</span></label>
+            <label class="check-item"><input type="checkbox" checked disabled> <span><strong>Inspección Organoléptica y Física:</strong> Ausencia de partículas, turbidez, roturas o sellos violados.</span></label>
+            <label class="check-item"><input type="checkbox" checked disabled> <span><strong>Verificación de Cadena de Frío:</strong> Control de termómetros en neveras y termos (2°C a 8°C).</span></label>
+          </div>
+          <div class="alert-inline alert-info">
+            <i class="fa-solid fa-clipboard-check"></i> Diligenciamiento obligatorio del Acta de Recepción Técnica.
+          </div>
+        </div>
+
+        <div class="role-card role-reg">
+          <div class="role-badge"><i class="fa-solid fa-user-shield"></i> A cargo de: Regente de Farmacia</div>
+          <h3>Recepción Administrativa</h3>
+          <p class="role-intro">Validación legal, presupuestal y contractual del cargamento:</p>
+          <div class="checklist">
+            <label class="check-item"><input type="checkbox" checked disabled> <span><strong>Cotejo Documental:</strong> Factura, remisión y orden de compra formalmente autorizada.</span></label>
+            <label class="check-item"><input type="checkbox" checked disabled> <span><strong>Validación de Precios y Cantidades:</strong> Cumplimiento de condiciones pactadas con el proveedor.</span></label>
+            <label class="check-item"><input type="checkbox" checked disabled> <span><strong>Soporte Jurídico y Tributario:</strong> Cumplimiento de especificaciones institucionales.</span></label>
+            <label class="check-item"><input type="checkbox" checked disabled> <span><strong>Ingreso al Sistema de Información:</strong> Autorización formal de ingreso al inventario hospitalario.</span></label>
+          </div>
+          <div class="alert-inline alert-success">
+            <i class="fa-solid fa-stamp"></i> Sin ambas recepciones completas, ningún insumo puede ser distribuido.
+          </div>
+        </div>
+      </div>
+
+      <!-- Cuadro comparativo interactivo -->
+      <div class="tech-comparison-panel">
+        <h4><i class="fa-solid fa-clipboard-list"></i> Puntos de Control Obligatorios en el Proceso de Recepción</h4>
+        <div class="comparison-grid-items">
+          <div class="comp-item">
+            <i class="fa-solid fa-barcode"></i>
+            <div>
+              <strong>Rotulado y Leyendas:</strong>
+              <p>Deben contener: Nombre genérico, concentración, forma farmacéutica, vía de administración, laboratorio fabricante y condiciones de conservación.</p>
+            </div>
+          </div>
+          <div class="comp-item">
+            <i class="fa-solid fa-shield-virus"></i>
+            <div>
+              <strong>Empaque Primario y Secundario:</strong>
+              <p>Blíster termosellado sin perforaciones, frascos con precinto de seguridad intacto y ampollas con serigrafía legible.</p>
+            </div>
+          </div>
+          <div class="comp-item">
+            <i class="fa-solid fa-file-signature"></i>
+            <div>
+              <strong>Acta de No Conformidad:</strong>
+              <p>Si algún producto llega averiado, con lote ilegible o sin coincidir con la orden, se genera rechazo técnico inmediato.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 3: ALMACENAMIENTO Y ROTACIÓN FEFO -->
+    <section class="station-card" id="station-3">
+      <div class="station-header">
+        <span class="station-step">Proceso 03 / 09</span>
+        <h2>Almacenamiento Técnico y Sistema FEFO</h2>
+        <p class="station-desc">Organización metódica de medicamentos y dispositivos médicos para preservar su calidad y asegurar su rotación técnica.</p>
+      </div>
+
+      <div class="fefo-banner">
+        <div class="fefo-acronym">
+          <span class="letter">F</span>irst <span class="letter">E</span>xpired, <span class="letter">F</span>irst <span class="letter">O</span>ut
+        </div>
+        <p class="fefo-meaning"><strong>"Primero en Vencer, Primero en Salir"</strong> • En el ámbito sanitario prevalece estrictamente la fecha de expiración del lote, independientemente de cuándo ingresó el producto al almacén.</p>
+      </div>
+
+      <!-- Organización Técnica de Estanterías (Interactivo por Clic) -->
+      <div class="storage-tech-container">
+        <div class="storage-intro">
+          <h4><i class="fa-solid fa-cubes-stacked"></i> Directrices Técnicas de Almacenamiento en Estanterías</h4>
+          <p>Selecciona cada parámetro para visualizar los requisitos normativos aplicables en la E.S.E.:</p>
+        </div>
+
+        <div class="storage-interactive-grid">
+          <div class="storage-interactive-item active" onclick="mostrarDetalleAlmacenamiento(this, 'fefo-rule')">
+            <i class="fa-solid fa-arrow-down-short-wide"></i>
+            <span>Disposición FEFO</span>
+          </div>
+          <div class="storage-interactive-item" onclick="mostrarDetalleAlmacenamiento(this, 'segregacion-rule')">
+            <i class="fa-solid fa-layer-group"></i>
+            <span>Segregación Física</span>
+          </div>
+          <div class="storage-interactive-item" onclick="mostrarDetalleAlmacenamiento(this, 'estibas-rule')">
+            <i class="fa-solid fa-pallet"></i>
+            <span>Distancias y Estibas</span>
+          </div>
+          <div class="storage-interactive-item" onclick="mostrarDetalleAlmacenamiento(this, 'higiene-rule')">
+            <i class="fa-solid fa-broom"></i>
+            <span>Limpieza y Rotulación</span>
+          </div>
+        </div>
+
+        <div class="storage-detail-display" id="storage-detail-box">
+          <h4 id="storage-detail-title">Disposición Técnica del Sistema FEFO</h4>
+          <p id="storage-detail-desc">Al ingresar un nuevo lote a cualquier anaquel o botiquín institucional, las unidades con fecha de vencimiento más próxima se colocan en la parte delantera de la hilera, y los productos de mayor vida útil en la parte posterior.</p>
+          <div class="rule-box" id="storage-detail-norm">
+            <i class="fa-solid fa-circle-info"></i> Principio operativo obligatorio en Farmacia Central y botiquines asistenciales de todos los servicios.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 4: ROTULACIÓN Y CÓDIGO DE COLORES INSTITUCIONAL -->
+    <section class="station-card" id="station-4">
+      <div class="station-header">
+        <span class="station-step">Proceso 04 / 09</span>
+        <h2>Código de Colores Institucional</h2>
+        <p class="station-desc">Estandarización visual para la prevención de eventos adversos y errores de medicación en la institución.</p>
+      </div>
+
+      <div class="color-cards-container">
+        <!-- ROJO -->
+        <div class="color-card color-card-red">
+          <div class="color-badge red-badge"><i class="fa-solid fa-triangle-exclamation"></i> ROJO</div>
+          <h3>Medicamentos de Alto Riesgo</h3>
+          <p class="color-definition">Fármacos que presentan un riesgo elevado de causar daños severos o desenlaces fatales ante un error de dosificación, vía o velocidad de infusión.</p>
+          <div class="color-examples">
+            <strong>Ejemplos Institucionales:</strong>
+            <ul>
+              <li>Gluconato de Calcio</li>
+              <li>Cloruro de Potasio (KCl) concentrado</li>
+              <li>Sulfato de Magnesio</li>
+              <li>Oxitocina (en farmacia)</li>
+            </ul>
+          </div>
+          <div class="color-precaution">
+            <i class="fa-solid fa-shield-virus"></i> <strong>Protocolo:</strong> Doble verificación obligatoria antes de preparar y administrar.
+          </div>
+        </div>
+
+        <!-- AZUL -->
+        <div class="color-card color-card-blue">
+          <div class="color-badge blue-badge"><i class="fa-solid fa-clone"></i> AZUL</div>
+          <h3>Medicamentos LASA</h3>
+          <p class="color-definition">Medicamentos con similitud fonética (Look-Alike, Sound-Alike), que suenan parecido o tienen presentaciones comerciales y envases gemelos.</p>
+          <div class="color-examples">
+            <strong>Ejemplos Institucionales:</strong>
+            <ul>
+              <li><strong>DOPAMINA</strong> vs. <strong>DOBUTAMINA</strong></li>
+              <li><strong>AMPICILINA</strong> vs. <strong>OXACILINA</strong></li>
+              <li><strong>CAPTOPRIL</strong> vs. <strong>ENALAPRIL</strong></li>
+            </ul>
+          </div>
+          <div class="color-precaution">
+            <i class="fa-solid fa-eye"></i> <strong>Protocolo:</strong> Separación física en gavetas y rotulación mediante letras mayúsculas resaltadas (Tall-Man).
+          </div>
+        </div>
+
+        <!-- NEGRO -->
+        <div class="color-card color-card-black">
+          <div class="color-badge black-badge"><i class="fa-solid fa-hourglass-end"></i> NEGRO</div>
+          <h3>Vida Útil Menor a 4 Meses</h3>
+          <p class="color-definition">Alerta semafórica de expiración crítica. Identifica insumos con fecha de vencimiento inferior a cuatro meses para priorizar su uso o gestionar canje.</p>
+          <div class="color-examples">
+            <strong>Acciones Requeridas:</strong>
+            <ul>
+              <li>Adhesión del sticker negro sobre el rótulo primario.</li>
+              <li>Ubicación prioritaria en la primera línea de salida (FEFO).</li>
+              <li>Gestión de devolución con proveedor cuando aplique convenio.</li>
+              <li>Monitoreo activo durante los primeros 5 días del mes.</li>
+            </ul>
+          </div>
+          <div class="color-precaution">
+            <i class="fa-solid fa-clock-rotate-left"></i> <strong>Protocolo:</strong> Verificación mensual obligatoria en todos los servicios de la E.S.E.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 5: CONTROL DE TEMPERATURA Y HUMEDAD -->
+    <section class="station-card" id="station-5">
+      <div class="station-header">
+        <span class="station-step">Proceso 05 / 09</span>
+        <h2>Control de Temperatura y Cadena de Frío</h2>
+        <p class="station-desc">Mantenimiento de las condiciones ambientales óptimas exigidas por la normatividad farmacéutica colombiana.</p>
+      </div>
+
+      <div class="temp-ranges-grid">
+        <div class="temp-box box-ambient">
+          <div class="temp-icon"><i class="fa-solid fa-house-chimney-medical"></i></div>
+          <h3>Temperatura Ambiente</h3>
+          <div class="range-value">&lt; 30 °C</div>
+          <p>Aplica a Farmacia Central, almacén e inventarios de todos los servicios clínicos. Humedad relativa: <strong>entre 40% y 70%</strong>.</p>
+        </div>
+
+        <div class="temp-box box-fridge">
+          <div class="temp-icon"><i class="fa-solid fa-snowflake"></i></div>
+          <h3>Cadena de Frío (Refrigeración)</h3>
+          <div class="range-value">2 °C a 8 °C</div>
+          <p>Exclusivo para medicamentos termolábiles (biológicos, oxitocina, insulina, ergometrina). <strong>NUNCA CONGELAR (&lt;2°C).</strong></p>
+        </div>
+
+        <div class="temp-box box-records">
+          <div class="temp-icon"><i class="fa-solid fa-pen-fancy"></i></div>
+          <h3>Doble Registro Diario Oficial</h3>
+          <div class="schedule-pills">
+            <span class="pill pill-blue"><i class="fa-solid fa-sun"></i> Turno Mañana: Esfero AZUL</span>
+            <span class="pill pill-red"><i class="fa-solid fa-moon"></i> Turno Tarde: Esfero ROJO</span>
+          </div>
+          <p>Diligenciamiento estricto en la planilla termohigrométrica oficial dispuesta en cada área.</p>
+        </div>
+      </div>
+
+      <!-- Protocolo Institucional ante Desviaciones Ambientales -->
+      <div class="protocol-box">
+        <h5><i class="fa-solid fa-triangle-exclamation"></i> Procedimiento Institucional ante Desviación de Temperatura o Ruptura de Frío</h5>
+        <ol class="step-guide">
+          <li><strong>Mantener herméticamente cerrado el refrigerador</strong> para preservar la inercia térmica residual.</li>
+          <li><strong>Verificar suministro eléctrico</strong>, estabilidad de la toma de corriente y calibración del termohigrómetro.</li>
+          <li><strong>Notificación Inmediata:</strong> Avisar sin demora a la Regente de Farmacia y al área de Mantenimiento hospitalario.</li>
+          <li><strong>Plan de Contingencia:</strong> Trasladar los medicamentos e insumos a termos portátiles debidamente acondicionados con paquetes de gel refrigerante entre 2°C y 8°C.</li>
+          <li><strong>Registro de la Novedad:</strong> Consignar la contingencia en el formato oficial de reporte de desviaciones térmicas.</li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 6: DISPENSACIÓN CORRECTA Y 5 CORRECTOS -->
+    <section class="station-card" id="station-6">
+      <div class="station-header">
+        <span class="station-step">Proceso 06 / 09</span>
+        <h2>Dispensación Segura y Modalidades de Atención</h2>
+        <p class="station-desc">Garantía de la entrega informada, correcta y oportuna del medicamento al paciente y personal asistencial.</p>
+      </div>
+
+      <div class="dispensing-modalities">
+        <div class="modality-box mod-intra">
+          <div class="mod-icon"><i class="fa-solid fa-hospital"></i></div>
+          <h3>Atención Intramural</h3>
+          <p>Dispensación para pacientes en Consulta Externa, Urgencias, Hospitalización y Sala de Partos dentro de la institución.</p>
+          <ul class="clean-list">
+            <li>Verificación minuciosa de la fórmula médica (legibilidad, firma y sello habilitado).</li>
+            <li>Revisión directa y cotejo con el personal de enfermería en servicios asistenciales.</li>
+            <li>Información personalizada al usuario ambulatorio sobre dosis, horarios y conservación en el hogar.</li>
+          </ul>
+        </div>
+
+        <div class="modality-box mod-extra">
+          <div class="mod-icon"><i class="fa-solid fa-van-shuttle"></i></div>
+          <h3>Atención Extramural</h3>
+          <p>Brigadas, jornadas de promoción y brigadas integrales en veredas y corregimientos del municipio de Potosí.</p>
+          <ul class="clean-list">
+            <li>Transporte de insumos en contenedores térmicos que resguarden la estabilidad fisicoquímica frente a la intemperie.</li>
+            <li>Monitoreo de la temperatura durante los traslados vehiculares hacia las zonas rurales.</li>
+            <li>Educación comunitaria respetando las pautas culturales y lingüísticas de la población usuaria.</li>
+          </ul>
+        </div>
+      </div>
+
+      <!-- Los 5 Correctos de la Medicación Segura -->
+      <div class="correctos-container">
+        <h3><i class="fa-solid fa-shield-halved"></i> La Barrera Máxima: Los 5 Correctos Farmacéuticos</h3>
+        <div class="correctos-grid">
+          <div class="correcto-pill"><span class="num">1</span> <strong>Paciente</strong> Correcto</div>
+          <div class="correcto-pill"><span class="num">2</span> <strong>Medicamento</strong> Correcto</div>
+          <div class="correcto-pill"><span class="num">3</span> <strong>Dosis</strong> Correcta</div>
+          <div class="correcto-pill"><span class="num">4</span> <strong>Vía</strong> Correcta</div>
+          <div class="correcto-pill"><span class="num">5</span> <strong>Horario</strong> Correcto</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 7: MEDICAMENTOS DE CONTROL ESPECIAL (MCE) -->
+    <section class="station-card" id="station-7">
+      <div class="station-header">
+        <span class="station-step">Proceso 07 / 09</span>
+        <h2>Medicamentos de Control Especial (MCE)</h2>
+        <p class="station-desc">Sustancias sometidas a fiscalización nacional por su potencial de abuso y dependencia, vigiladas por el Fondo Nacional de Estupefacientes (FNE).</p>
+      </div>
+
+      <div class="mce-grid">
+        <div class="mce-card mce-custodia">
+          <div class="mce-icon"><i class="fa-solid fa-key"></i></div>
+          <h3>Custodia Exclusiva Bajo Llave</h3>
+          <p>Almacenamiento restringido exclusivamente en mueble metálico de seguridad con cerradura blindada. <strong>Custodia bajo llave</strong> a cargo del personal farmacéutico autorizado.</p>
+        </div>
+
+        <div class="mce-card mce-libro">
+          <div class="mce-icon"><i class="fa-solid fa-book-medical"></i></div>
+          <h3>Libro Oficial Foliado</h3>
+          <p>Registro individual y cronológico de cada entrada, salida y saldo físico en el libro oficial foliado y registrado ante las autoridades sanitarias competentes.</p>
+        </div>
+
+        <div class="mce-card mce-receta">
+          <div class="mce-icon"><i class="fa-solid fa-file-prescription"></i></div>
+          <h3>Recetario Oficial del FNE</h3>
+          <p>Dispensación autorizada únicamente mediante fórmula médica oficial expedida en los recetarios autorizados por el Instituto Departamental de Salud de Nariño (IDSN) y FNE.</p>
+        </div>
+
+        <div class="mce-card mce-auditoria">
+          <div class="mce-icon"><i class="fa-solid fa-scale-unbalanced"></i></div>
+          <h3>Responsabilidad Legal y Trazabilidad</h3>
+          <p>Cualquier avería, rotura accidental o inconsistencia física debe consignarse mediante acta técnica inmediata suscrita por los responsables de turno.</p>
+        </div>
+      </div>
+
+      <div class="law-tag">
+        <i class="fa-solid fa-gavel"></i> <strong>Marco Normativo FNE:</strong> Resolución 1478 de 2006 y Resolución 315 de 2020 (Ministerio de Salud y Protección Social).
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 8: DISPOSICIÓN FINAL DE RESIDUOS FARMACÉUTICOS -->
+    <section class="station-card" id="station-8">
+      <div class="station-header">
+        <span class="station-step">Proceso 08 / 09</span>
+        <h2>Disposición Final y Residuos Farmacéuticos</h2>
+        <p class="station-desc">Gestión integral de residuos hospitalarios peligrosos para evitar la contaminación ambiental y riesgos sanitarios.</p>
+      </div>
+
+      <div class="waste-flow-grid">
+        <div class="waste-step">
+          <div class="waste-num">1</div>
+          <div class="waste-icon"><i class="fa-solid fa-box-archive"></i></div>
+          <h4>Identificación y Retiro</h4>
+          <p>Los fármacos vencidos, deteriorados o no aptos para el consumo humano se retiran inmediatamente de los estantes activos.</p>
+        </div>
+
+        <div class="waste-step">
+          <div class="waste-num">2</div>
+          <div class="waste-icon"><i class="fa-solid fa-lock"></i></div>
+          <h4>Área Técnica de Cuarentena</h4>
+          <p>Se rotulan expresamente con la leyenda <em>"NO APTO PARA USO HUMANO"</em> y se custodian en el área técnica de cuarentena.</p>
+        </div>
+
+        <div class="waste-step">
+          <div class="waste-num">3</div>
+          <div class="waste-icon"><i class="fa-solid fa-clipboard-list"></i></div>
+          <h4>Acta Institucional de Baja</h4>
+          <p>Consignación formal de lotes, principios activos, cantidades y pesaje neto del residuo químico-farmacéutico.</p>
+        </div>
+
+        <div class="waste-step highlight-step">
+          <div class="waste-num">4</div>
+          <div class="waste-icon"><i class="fa-solid fa-truck-moving"></i></div>
+          <h4>Entrega a Empresa Externa</h4>
+          <p>Entrega técnica periódica a la <strong>empresa externa encargada de recolección de residuos</strong> hospitalarios y peligrosos para su disposición final y emisión del manifiesto oficial.</p>
+        </div>
+      </div>
+
+      <div class="danger-warning-box">
+        <i class="fa-solid fa-triangle-exclamation"></i>
+        <div>
+          <strong>PROHIBICIÓN ESTRICTA:</strong> Queda terminantemente prohibido desechar residuos farmacéuticos por el desagüe o en la bolsa de basura ordinaria. Todo descarte debe registrarse en el Plan de Gestión Integral de Residuos Hospitalarios (PGIRH).
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 9: MEDICAMENTOS EN LAS ÁREAS ASISTENCIALES Y VERIFICACIÓN -->
+    <section class="station-card" id="station-9">
+      <div class="station-header">
+        <span class="station-step">Proceso 09 / 09</span>
+        <h2>Medicamentos y Dispositivos en Áreas Asistenciales</h2>
+        <p class="station-desc">Protocolos de custodia, dotación y control mensual en cada uno de los servicios clínicos del hospital.</p>
+      </div>
+
+      <!-- Pestañas de Servicios Asistenciales -->
+      <div class="areas-tabs-container">
+        <div class="areas-tab-nav">
+          <button class="tab-btn active" onclick="mostrarArea('partos')"><i class="fa-solid fa-baby"></i> Sala de Partos</button>
+          <button class="tab-btn" onclick="mostrarArea('era')"><i class="fa-solid fa-lungs"></i> Sala ERA</button>
+          <button class="tab-btn" onclick="mostrarArea('eda')"><i class="fa-solid fa-bottle-droplet"></i> Sala EDA</button>
+          <button class="tab-btn" onclick="mostrarArea('carro')"><i class="fa-solid fa-heart-pulse"></i> Procedimientos & Carro de Paro</button>
+          <button class="tab-btn" onclick="mostrarArea('ambulancia')"><i class="fa-solid fa-truck-medical"></i> Ambulancias (TAB / TAM)</button>
+        </div>
+
+        <!-- SALA DE PARTOS -->
+        <div class="area-tab-content active" id="area-partos">
+          <div class="area-detail-card">
+            <div class="area-text">
+              <span class="area-tag">Atención Obstétrica</span>
+              <h3>Sala de Partos</h3>
+              <p>Dotación específica para la atención del parto y el postparto inmediato bajo condiciones de asepsia y seguridad.</p>
+              
+              <div class="specific-storage-alert">
+                <i class="fa-solid fa-temperature-arrow-down"></i>
+                <div>
+                  <strong>Aclaración Institucional sobre Termolábiles:</strong><br>
+                  En Sala de Partos <strong>NO se manejan oxitocina ni metilergonovina</strong> en los estantes del área, ya que son medicamentos que requieren refrigeración continua obligatoria (2°C a 8°C) y se encuentran custodiados exclusivamente en la nevera del <strong>Servicio Farmacéutico</strong>, despachándose según necesidad inmediata.
+                </div>
+              </div>
+
+              <ul class="bullet-list">
+                <li><strong>Medicamentos disponibles en área:</strong> Sulfato de Magnesio, Gluconato de Calcio, antibióticos de primera línea y soluciones parenterales.</li>
+                <li><strong>Dispositivos Médicos:</strong> Kits de atención de parto estériles, pinzas umbilicales, sondas vesicales y catéteres intravenosos.</li>
+              </ul>
+            </div>
+            <div class="area-visual">
+              <div class="service-art art-partos"><i class="fa-solid fa-baby-carriage"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SALA ERA -->
+        <div class="area-tab-content" id="area-era">
+          <div class="area-detail-card">
+            <div class="area-text">
+              <span class="area-tag">Terapia Respiratoria</span>
+              <h3>Sala ERA (Enfermedad Respiratoria Aguda)</h3>
+              <p>Manejo oportuno de broncoespasmos, laringitis y episodios obstructivos pediátricos y adultos.</p>
+              <ul class="bullet-list">
+                <li><strong>Medicamentos Disponibles:</strong> Salbutamol aerosol inhalador, Bromuro de Ipratropio, Dexametasona, Hidrocortisona.</li>
+                <li><strong>Dispositivos Médicos:</strong> Inhalocámaras (espaciadores), cánulas nasales, mascarillas con reservorio y micronebulizadores.</li>
+              </ul>
+            </div>
+            <div class="area-visual">
+              <div class="service-art art-era"><i class="fa-solid fa-lungs-virus"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SALA EDA -->
+        <div class="area-tab-content" id="area-eda">
+          <div class="area-detail-card">
+            <div class="area-text">
+              <span class="area-tag">Rehidratación Oral y Endovenosa</span>
+              <h3>Sala EDA (Enfermedad Diarreica Aguda)</h3>
+              <p>Recuperación hidroelectrolítica rápida en pacientes con cuadros de deshidratación leve a moderada.</p>
+              <ul class="bullet-list">
+                <li><strong>Medicamentos Disponibles:</strong> Sales de Rehidratación Oral (SRO sobres), Sulfato de Zinc solución, Solución Hartmann y Cloruro de Sodio 0.9%.</li>
+                <li><strong>Dispositivos Médicos:</strong> Equipos de venoclisis (macrogotero y microgotero), jeringas de dosificación y catéteres periféricos.</li>
+              </ul>
+            </div>
+            <div class="area-visual">
+              <div class="service-art art-eda"><i class="fa-solid fa-droplet"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- CARRO DE PARO -->
+        <div class="area-tab-content" id="area-carro">
+          <div class="area-detail-card">
+            <div class="area-text">
+              <span class="area-tag">Soporte Vital de Urgencias</span>
+              <h3>Procedimientos de Urgencias & Carro de Paro</h3>
+              <p>Unidad móvil sellada e indispensable para reanimación cardiopulmonar y emergencias críticas.</p>
+              <ul class="bullet-list">
+                <li><strong>Medicamentos de Reanimación:</strong> Adrenalina, Atropina, Amiodarona, Lidocaína, Bicarbonato de Sodio.</li>
+                <li><strong>Dispositivos Médicos:</strong> Tubos endotraqueales, laringoscopio con pilas verificadas, guías de intubación, bolsas de resucitación (ambú) y electrodos.</li>
+                <li><strong>Candado de Seguridad:</strong> Candado foliado con número de serie registrado en la planilla; su apertura exige reposición e inventario inmediato al 100%.</li>
+              </ul>
+            </div>
+            <div class="area-visual">
+              <div class="service-art art-carro"><i class="fa-solid fa-heart-pulse"></i></div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AMBULANCIAS -->
+        <div class="area-tab-content" id="area-ambulancia">
+          <div class="area-detail-card">
+            <div class="area-text">
+              <span class="area-tag">Transporte Asistencial de Pacientes</span>
+              <h3>Ambulancias (TAB / TAM)</h3>
+              <p>Botiquín de transporte asistencial básico y medicalizado preparado para la red vial municipal e intermunicipal.</p>
+              <ul class="bullet-list">
+                <li><strong>Protección Física:</strong> Medicamentos resguardados de vibración, cambios térmicos de ruta e intemperie.</li>
+                <li><strong>Dotación Vital:</strong> Analgésicos, soluciones endovenosas, equipos de inmovilización, férulas, collares cervicales y cilindro de oxígeno con manómetro verificado.</li>
+              </ul>
+            </div>
+            <div class="area-visual">
+              <div class="service-art art-ambulancia"><i class="fa-solid fa-truck-medical"></i></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- OBLIGACIÓN INSTITUCIONAL DE LOS PRIMEROS 5 DÍAS -->
+      <div class="monthly-rule-card">
+        <div class="m-icon"><i class="fa-solid fa-calendar-check"></i></div>
+        <div class="m-content">
+          <h4>VERIFICACIÓN OBLIGATORIA DE CADA SERVICIO</h4>
+          <p class="highlight-date">Plazo Mandatorio: Durante los primeros CINCO (5) días de cada mes.</p>
+          <div class="responsibilities-grid">
+            <div class="resp-item"><i class="fa-solid fa-boxes-stacked"></i> 1. Mantener actualizado el inventario del botiquín del área.</div>
+            <div class="resp-item"><i class="fa-solid fa-calendar-day"></i> 2. Revisar el 100% de fechas de vencimiento de cada insumo.</div>
+            <div class="resp-item"><i class="fa-solid fa-temperature-half"></i> 3. Verificar condiciones de almacenamiento y termohigrometría.</div>
+            <div class="resp-item"><i class="fa-solid fa-bullhorn"></i> 4. Reportar oportunamente faltantes y novedades a Farmacia.</div>
+            <div class="resp-item"><i class="fa-solid fa-tag"></i> 5. Identificar y rotular productos próximos a vencer (Sticker NEGRO &lt;4 meses).</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESTACIÓN 10: SÍNTESIS, COMPROMISO Y POSTEST -->
+    <section class="station-card" id="station-10">
+      <div class="station-header">
+        <span class="station-step">Evaluación y Cierre</span>
+        <h2>Compromiso por la Seguridad y Calidad Farmacéutica</h2>
+        <p class="station-desc">E.S.E. Centro Hospital Luis Antonio Montero • Municipio de Potosí, Nariño</p>
+      </div>
+
+      <div class="final-banner">
+        <div class="final-quote">
+          <i class="fa-solid fa-shield-halved quote-icon"></i>
+          <h3>"UN MEDICAMENTO SEGURO DEPENDE DEL COMPROMISO Y LA VIGILANCIA DE TODO EL EQUIPO ASISTENCIAL Y FARMACÉUTICO".</h3>
+          <p class="final-sub">Servicio Farmacéutico Hospitalario • Seguridad del Paciente</p>
+        </div>
+      </div>
+
+      <div class="final-action-cards">
+        <div class="f-card f-postest">
+          <div class="f-icon"><i class="fa-solid fa-mobile-screen-button"></i></div>
+          <h4>Realizar Postest Institucional</h4>
+          <p>Instrumento de validación de aprendizajes para registrar la aprobación de la reinducción del personal.</p>
+          <button class="btn-final-action btn-f-post" onclick="abrirModalForm('postest')">
+            <i class="fa-solid fa-square-check"></i> Ingresar al Postest
+          </button>
+        </div>
+
+        <div class="f-card f-material">
+          <div class="f-icon"><i class="fa-solid fa-file-arrow-down"></i></div>
+          <h4>Infografías y Formatos</h4>
+          <p>Visualiza y descarga los formatos de lista de chequeo mensual, código de colores y cadena de frío.</p>
+          <a href="infografias.html" target="_blank" class="btn-final-action btn-f-mat" style="text-decoration:none;">
+            <i class="fa-solid fa-download"></i> Ver Infografías
+          </a>
+        </div>
+
+        <div class="f-card f-normas">
+          <div class="f-icon"><i class="fa-solid fa-scale-balanced"></i></div>
+          <h4>Normatividad Colombiana Vigente</h4>
+          <p>Consulta el marco legal oficial: Decreto 780/2016, Res. 1403/2007, Res. 3100/2019, Res. 1478/2006 y Res. 315/2020.</p>
+          <button class="btn-final-action btn-f-nor" onclick="abrirModalNormas()">
+            <i class="fa-solid fa-book-bookmark"></i> Consultar Normas
+          </button>
+        </div>
+      </div>
+
+      <div class="team-footer-card">
+        <p><strong>Servicio Farmacéutico Institucional</strong> • E.S.E. Centro Hospital Luis Antonio Montero</p>
+        <span>Municipio de Potosí, Departamento de Nariño</span>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- BARRA DE NAVEGACIÓN INFERIOR (PAGINADOR Y CONTROLES) -->
+  <footer class="bottom-bar">
+    <div class="bottom-container">
+      <button id="btn-prev" class="btn-nav" onclick="cambiarEstacion(estacionActual - 1)">
+        <i class="fa-solid fa-chevron-left"></i> <span>Anterior</span>
+      </button>
+
+      <!-- Selector de Estaciones (Navegación Interactiva) -->
+      <div class="station-selector-wrapper">
+        <select id="station-select" onchange="cambiarEstacion(parseInt(this.value))">
+          <option value="0">Inicio: Reinducción Servicio Farmacéutico</option>
+          <option value="1">1. Selección y Adquisición</option>
+          <option value="2">2. Recepción Técnica y Administrativa</option>
+          <option value="3">3. Almacenamiento y Sistema FEFO</option>
+          <option value="4">4. Código de Colores Institucional</option>
+          <option value="5">5. Control de Temperatura y Humedad</option>
+          <option value="6">6. Dispensación y Modalidades</option>
+          <option value="7">7. Medicamentos de Control Especial (MCE)</option>
+          <option value="8">8. Disposición Final de Residuos</option>
+          <option value="9">9. Áreas Asistenciales y Verificación</option>
+          <option value="10">10. Evaluación Final y Postest</option>
+        </select>
+        <span class="station-indicator" id="station-indicator">0 / 10</span>
+      </div>
+
+      <button id="btn-next" class="btn-nav btn-next" onclick="cambiarEstacion(estacionActual + 1)">
+        <span>Siguiente Proceso</span> <i class="fa-solid fa-chevron-right"></i>
+      </button>
+    </div>
+  </footer>
+
+  <!-- ==================== MODALES ==================== -->
+
+  <!-- MODAL: FORMULARIO DE EVALUACIÓN (PRETEST / POSTEST CON QR) -->
+  <div class="modal" id="modal-eval">
+    <div class="modal-dialog">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title-box">
+            <i class="fa-solid fa-square-poll-vertical" id="eval-modal-icon"></i>
+            <div>
+              <h3 id="eval-modal-title">Evaluación Institucional</h3>
+              <p id="eval-modal-sub">E.S.E. Centro Hospital Luis Antonio Montero</p>
+            </div>
+          </div>
+          <button class="btn-close" onclick="cerrarModal('modal-eval')">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="eval-instruction-box">
+            <p><strong>Instrucciones para los participantes:</strong> Puedes abrir el formulario en línea haciendo clic en el enlace o apuntando la cámara de tu celular al código QR en pantalla:</p>
+            
+            <div class="link-placeholder-box">
+              <span class="link-label">Enlace Configurado:</span>
+              <div class="link-url" id="eval-active-url">https://docs.google.com/forms/d/e/1FAIpQLSc-REEMPLAZAR-CON-TU-ENLACE-GOOGLE-FORMS/viewform</div>
+            </div>
+
+            <!-- Código QR Dinámico en Pantalla -->
+            <div class="qr-presentation-box" style="text-align:center; background:white; padding:1.5rem; border-radius:12px; margin:1.25rem 0; border:1px solid #E2E8F0; box-shadow:0 2px 8px rgba(0,0,0,0.04);">
+              <h5 style="margin-bottom:0.75rem; color:#0F172A; font-size:1rem;"><i class="fa-solid fa-qrcode"></i> Código QR para Escaneo Rápido</h5>
+              <div style="display:inline-block; padding:10px; background:white; border:2px dashed #0D9488; border-radius:8px;">
+                <img id="eval-qr-image" src="https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=https://docs.google.com/forms/d/e/1FAIpQLSc-REEMPLAZAR-CON-TU-ENLACE-GOOGLE-FORMS/viewform" alt="Código QR Evaluación" style="width:180px; height:180px; display:block;">
+              </div>
+              <p style="font-size:0.8rem; color:#64748B; margin-top:0.5rem;"><i class="fa-solid fa-camera"></i> Apunta con la cámara del celular al código para abrir la prueba automáticamente</p>
+            </div>
+
+            <div class="eval-action-links">
+              <a href="#" id="btn-open-real-form" target="_blank" class="btn-action-primary">
+                <i class="fa-solid fa-arrow-up-right-from-square"></i> Abrir Formulario en Nueva Pestaña
+              </a>
+            </div>
+
+            <div class="admin-note">
+              <i class="fa-solid fa-circle-info"></i>
+              <div>
+                <strong>Creación Automática en Google Forms:</strong> Si aún no has creado los formularios en tu Google Drive, puedes generarlos automáticamente en 10 segundos con nuestro script oficial:
+                <div style="margin-top:0.4rem;">
+                  <a href="generador_google_forms.html" target="_blank" style="color:#0D9488; font-weight:700; text-decoration:underline;">
+                    <i class="fa-solid fa-wand-magic-sparkles"></i> Abrir Asistente para Crear Formularios en Google Forms
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: MATERIAL EDUCATIVO E INFOGRAFÍAS -->
+  <div class="modal" id="modal-material">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title-box">
+            <i class="fa-solid fa-file-pdf"></i>
+            <div>
+              <h3>Material Educativo e Infografías Imprimibles</h3>
+              <p>Láminas técnicas de pared para fijar en los botiquines y carros de paro institucionales</p>
+            </div>
+          </div>
+          <button class="btn-close" onclick="cerrarModal('modal-material')">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="infographics-grid">
+            
+            <!-- Tarjeta Material 1 -->
+            <div class="info-doc-card">
+              <div class="doc-badge color-red-bg">Seguridad Visual</div>
+              <h4>Código de Colores Institucional</h4>
+              <p>Afiche de alta resolución con las definiciones de Rojo (Alto Riesgo), Azul (LASA) y Negro (&lt;4 meses).</p>
+              <a href="infografias.html#afiche-colores" target="_blank" class="btn-outline-print" style="text-align:center; text-decoration:none; display:block;"><i class="fa-solid fa-eye"></i> Ver e Imprimir Afiche</a>
+            </div>
+
+            <!-- Tarjeta Material 2 -->
+            <div class="info-doc-card">
+              <div class="doc-badge color-sky-bg">Cadena de Frío & FEFO</div>
+              <h4>Protocolo FEFO & Cadena de Frío</h4>
+              <p>Rango 2°C a 8°C, registro azul mañana / rojo tarde, contingencias y rotación First Expired, First Out.</p>
+              <a href="infografias.html#afiche-frio" target="_blank" class="btn-outline-print" style="text-align:center; text-decoration:none; display:block;"><i class="fa-solid fa-eye"></i> Ver e Imprimir Guía</a>
+            </div>
+
+            <!-- Tarjeta Material 3 -->
+            <div class="info-doc-card">
+              <div class="doc-badge color-lavender-bg">Asistencial</div>
+              <h4>Checklist de los 5 Primeros Días del Mes</h4>
+              <p>Lista de chequeo oficial para enfermería y médicos en Sala de Partos, Sala ERA, EDA, Urgencias y Ambulancia.</p>
+              <a href="infografias.html#afiche-checklist" target="_blank" class="btn-outline-print" style="text-align:center; text-decoration:none; display:block;"><i class="fa-solid fa-eye"></i> Ver e Imprimir Formato</a>
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <a href="infografias.html" target="_blank" class="btn-action-primary" style="text-decoration:none;"><i class="fa-solid fa-file-pdf"></i> Abrir Todas las Infografías Imprimibles</a>
+          <button class="btn-nav" onclick="cerrarModal('modal-material')">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL: MARCO NORMATIVO COLOMBIANO VIGENTE -->
+  <div class="modal" id="modal-normas">
+    <div class="modal-dialog modal-lg">
+      <div class="modal-content">
+        <div class="modal-header">
+          <div class="modal-title-box">
+            <i class="fa-solid fa-scale-balanced"></i>
+            <div>
+              <h3>Normatividad Farmacéutica Colombiana Vigente</h3>
+              <p>Fuentes oficiales del Ministerio de Salud, INVIMA y Fondo Nacional de Estupefacientes</p>
+            </div>
+          </div>
+          <button class="btn-close" onclick="cerrarModal('modal-normas')">&times;</button>
+        </div>
+        <div class="modal-body">
+          <div class="laws-list">
+            
+            <div class="law-item">
+              <span class="law-code">Decreto 780 de 2016</span>
+              <h4>Decreto Único Reglamentario del Sector Salud y Protección Social</h4>
+              <p>Compila las normas del sector salud; en su Título 10 reglamenta el servicio farmacéutico, modelos de gestión, procesos de selección, adquisición, recepción, almacenamiento, distribución y dispensación.</p>
+            </div>
+
+            <div class="law-item">
+              <span class="law-code">Resolución 1403 de 2007</span>
+              <h4>Modelo de Gestión del Servicio Farmacéutico y Manual de Condiciones Esenciales</h4>
+              <p>Establece los criterios técnicos de almacenamiento, control de temperatura y humedad, recepción técnica, farmacovigilancia, tecnovigilancia y dispensación segura.</p>
+            </div>
+
+            <div class="law-item">
+              <span class="law-code">Resolución 3100 de 2019</span>
+              <h4>Estándares de Habilitación en Salud</h4>
+              <p>Regula los estándares indispensables de talento humano, infraestructura, dotación, medicamentos, dispositivos médicos e historia clínica para instituciones prestadoras de servicios de salud (IPS).</p>
+            </div>
+
+            <div class="law-item">
+              <span class="law-code">Resolución 1478 de 2006 & Res. 315 de 2020</span>
+              <h4>Medicamentos de Control Especial y Monopolio del Estado</h4>
+              <p>Regula la distribución, custodia bajo llave en muebles metálicos, recetarios oficiales del Fondo Nacional de Estupefacientes y libros foliados de sustancias fiscalizadas.</p>
+            </div>
+
+            <div class="law-item">
+              <span class="law-code">Resolución 1164 de 2002 & Decreto 351 de 2014</span>
+              <h4>Gestión Integral de Residuos Hospitalarios y Similares (PGIRH)</h4>
+              <p>Norma la clasificación, segregación y disposición final de residuos farmacéuticos y químicos mediante empresa externa autorizada.</p>
+            </div>
+
+            <div class="law-item">
+              <span class="law-code">Política Nacional de Seguridad del Paciente (Minsalud)</span>
+              <h4>Guía de Buenas Prácticas para la Seguridad del Paciente</h4>
+              <p>Paquetes instruccionales para prevenir errores de medicación, administración segura y conciliación terapéutica.</p>
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button class="btn-nav" onclick="cerrarModal('modal-normas')">Cerrar</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SCRIPTS -->
+  <script src="app.js"></script>
+</body>
+</html>

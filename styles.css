@@ -1,0 +1,1811 @@
+/* ==========================================================================
+   REINDUCCIÓN INSTITUCIONAL DEL SERVICIO FARMACÉUTICO
+   E.S.E. CENTRO HOSPITAL LUIS ANTONIO MONTERO - POTOSÍ, NARIÑO
+   HOJA DE ESTILOS PROFESIONAL, MODERNA, TECNOLÓGICA Y LIMPIA
+   ========================================================================== */
+
+:root {
+  /* Paleta Pastel Profesional Tecnológica */
+  --bg-primary: #F8FAFC;
+  --bg-card: #FFFFFF;
+  --bg-subtle: #F1F5F9;
+
+  --color-mint: #E6F7F0;
+  --color-mint-dark: #0D9488;
+  --color-sky: #EBF5FF;
+  --color-sky-dark: #0284C7;
+  --color-lavender: #F3EEFF;
+  --color-lavender-dark: #7C3AED;
+  --color-beige: #FDF8F0;
+  --color-beige-dark: #D97706;
+  --color-rose: #FFF1F2;
+  --color-rose-dark: #E11D48;
+
+  /* Convenciones del Código de Colores Institucional */
+  --color-rojo-institucional: #E11D48;
+  --color-rojo-bg: #FFE4E6;
+  --color-azul-institucional: #0284C7;
+  --color-azul-bg: #E0F2FE;
+  --color-negro-institucional: #0F172A;
+  --color-negro-bg: #E2E8F0;
+
+  /* Textos y Bordes */
+  --text-main: #1E293B;
+  --text-muted: #64748B;
+  --text-light: #94A3B8;
+  --border-light: #E2E8F0;
+  --border-focus: #0D9488;
+
+  /* Sombras Suaves */
+  --shadow-sm: 0 1px 3px rgba(0,0,0,0.05), 0 1px 2px rgba(0,0,0,0.03);
+  --shadow-md: 0 4px 14px -1px rgba(0,0,0,0.07), 0 2px 6px -1px rgba(0,0,0,0.04);
+  --shadow-lg: 0 12px 28px -4px rgba(0,0,0,0.09), 0 4px 12px -2px rgba(0,0,0,0.04);
+
+  --radius-sm: 8px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+
+  --font-base: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-heading: 'Outfit', 'Plus Jakarta Sans', sans-serif;
+  --transition: all 0.25s ease-in-out;
+}
+
+/* Reset y Base */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-base);
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  overflow-x: hidden;
+}
+
+h1, h2, h3, h4, h5 {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  color: #0F172A;
+  line-height: 1.25;
+}
+
+p {
+  color: #334155;
+  font-size: 1rem;
+}
+
+strong {
+  color: #0F172A;
+  font-weight: 600;
+}
+
+/* ==========================================================================
+   BARRA SUPERIOR (HEADER)
+   ========================================================================== */
+.navbar {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background-color: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+}
+
+.nav-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.nav-logo {
+  height: 48px;
+  width: auto;
+  max-width: 140px;
+  object-fit: contain;
+  border-radius: var(--radius-sm);
+  background: white;
+  padding: 2px;
+}
+
+.logo-fallback {
+  width: 44px;
+  height: 44px;
+  background: var(--color-mint);
+  color: var(--color-mint-dark);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+}
+
+.hospital-name {
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: #0F172A;
+}
+
+.hospital-sub {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.nav-quick-links {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.nav-link-btn {
+  background: none;
+  border: 1px solid var(--border-light);
+  padding: 0.4rem 0.85rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-base);
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  transition: var(--transition);
+}
+
+.nav-link-btn:hover {
+  background: var(--bg-subtle);
+  color: var(--color-mint-dark);
+  border-color: var(--color-mint-dark);
+}
+
+.btn-icon {
+  background: none;
+  border: 1px solid var(--border-light);
+  cursor: pointer;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  transition: var(--transition);
+}
+
+.btn-icon:hover {
+  color: var(--color-mint-dark);
+  background: var(--color-mint);
+  border-color: var(--color-mint-dark);
+}
+
+/* Barra de progreso tecnológico */
+.mission-progress-bar-container {
+  width: 100%;
+  height: 4px;
+  background-color: #E2E8F0;
+  overflow: hidden;
+}
+
+.mission-progress-bar {
+  height: 100%;
+  width: 0%;
+  background: linear-gradient(90deg, #0D9488, #0284C7);
+  transition: width 0.35s ease;
+}
+
+/* ==========================================================================
+   CONTENIDO PRINCIPAL Y PANTALLAS
+   ========================================================================== */
+.main-content {
+  flex: 1;
+  max-width: 1200px;
+  width: 100%;
+  margin: 1.5rem auto 5.5rem auto;
+  padding: 0 1.25rem;
+}
+
+.station-card {
+  display: none;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.station-card.active {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.station-header {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.station-step {
+  display: inline-block;
+  background: var(--color-mint);
+  color: var(--color-mint-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  padding: 0.25rem 0.85rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.5rem;
+}
+
+.station-header h2 {
+  font-size: 2.1rem;
+  margin-bottom: 0.5rem;
+  color: #0F172A;
+}
+
+.station-desc {
+  max-width: 800px;
+  margin: 0 auto;
+  font-size: 1.05rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   ESTACIÓN 0: PORTADA TECNOLÓGICA Y SERIA
+   ========================================================================== */
+.hero-container.tech-portal {
+  background: linear-gradient(145deg, #FFFFFF, #F8FAFC);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2rem;
+  box-shadow: var(--shadow-md);
+  text-align: center;
+}
+
+.hero-brand-card {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-bottom: 1.5rem;
+  background: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  text-align: left;
+}
+
+.hero-logo-img {
+  height: 56px;
+  width: auto;
+  object-fit: contain;
+}
+
+.hero-brand-card h3 {
+  font-size: 1.15rem;
+  color: #0F172A;
+}
+
+.hero-brand-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.institutional-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--color-sky);
+  color: var(--color-sky-dark);
+  font-size: 0.85rem;
+  font-weight: 700;
+  padding: 0.4rem 1.1rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1.25rem;
+  border: 1px solid rgba(2, 132, 199, 0.2);
+}
+
+.hero-title-academic {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.hero-subtitle-academic {
+  font-size: 1.15rem;
+  color: #475569;
+  max-width: 850px;
+  margin: 0 auto 2.5rem auto;
+}
+
+/* Matriz de Procesos (Portal Grid) */
+.portal-grid-processes {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2.5rem;
+  text-align: left;
+}
+
+.process-tech-card {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.4rem;
+  box-shadow: var(--shadow-sm);
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.process-tech-card:hover {
+  transform: translateY(-3px);
+  border-color: #0D9488;
+  box-shadow: var(--shadow-md);
+}
+
+.ptc-icon {
+  width: 44px;
+  height: 44px;
+  background: var(--color-mint);
+  color: var(--color-mint-dark);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  margin-bottom: 0.85rem;
+}
+
+.process-tech-card h4 {
+  font-size: 1.05rem;
+  color: #0F172A;
+  margin-bottom: 0.35rem;
+}
+
+.process-tech-card p {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.45;
+  margin-bottom: 1rem;
+}
+
+.ptc-link {
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0D9488;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+/* Banners de Evaluación */
+.eval-banner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+  text-align: left;
+}
+
+.eval-box {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  justify-content: space-between;
+}
+
+.eval-icon {
+  width: 46px;
+  height: 46px;
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.35rem;
+  flex-shrink: 0;
+}
+
+.eval-icon.pre { background: var(--color-mint); color: var(--color-mint-dark); }
+.eval-icon.post { background: var(--color-lavender); color: var(--color-lavender-dark); }
+
+.eval-details h4 { font-size: 0.95rem; margin-bottom: 0.2rem; }
+.eval-details p { font-size: 0.8rem; color: var(--text-muted); }
+
+.btn-eval {
+  padding: 0.55rem 1.1rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.btn-pretest {
+  background: var(--color-mint);
+  color: var(--color-mint-dark);
+  border: 1px solid rgba(13, 148, 136, 0.25);
+}
+
+.btn-pretest:hover {
+  background: var(--color-mint-dark);
+  color: white;
+}
+
+.btn-postest {
+  background: var(--color-lavender);
+  color: var(--color-lavender-dark);
+  border: 1px solid rgba(124, 58, 237, 0.25);
+}
+
+.btn-postest:hover {
+  background: var(--color-lavender-dark);
+  color: white;
+}
+
+/* ==========================================================================
+   ESTACIÓN 1: TARJETAS FLIP Y FLUJO TECNOLÓGICO
+   ========================================================================== */
+.cards-grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.interactive-flip-card {
+  perspective: 1000px;
+  height: 330px;
+  cursor: pointer;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: left;
+  transition: transform 0.6s cubic-bezier(0.4, 0.2, 0.2, 1);
+  transform-style: preserve-3d;
+}
+
+.interactive-flip-card.is-flipped .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.card-mint { background: linear-gradient(160deg, #FFFFFF, var(--color-mint)); }
+.card-sky { background: linear-gradient(160deg, #FFFFFF, var(--color-sky)); }
+
+.card-icon {
+  width: 50px;
+  height: 50px;
+  background: white;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--color-mint-dark);
+  box-shadow: var(--shadow-sm);
+  margin-bottom: 0.75rem;
+}
+
+.card-sky .card-icon { color: var(--color-sky-dark); }
+
+.tap-hint {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  font-weight: 600;
+  margin-bottom: 0.75rem;
+}
+
+.clean-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.clean-list li {
+  font-size: 0.92rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+}
+
+.clean-list li i {
+  color: var(--color-mint-dark);
+  margin-top: 4px;
+}
+
+.flip-card-back {
+  background: #FFFFFF;
+  transform: rotateY(180deg);
+  border: 2px solid var(--color-mint-dark);
+}
+
+.back-badge {
+  display: inline-block;
+  background: var(--color-mint);
+  color: var(--color-mint-dark);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+}
+
+.rule-box {
+  background: var(--bg-subtle);
+  padding: 0.75rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  font-weight: 600;
+}
+
+/* Flujo Horizontal Tecnológico */
+.tech-explorer-box {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.tech-explorer-box h4 {
+  font-size: 1.1rem;
+  color: #0F172A;
+  margin-bottom: 1.25rem;
+}
+
+.flow-steps-horizontal {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.flow-node {
+  flex: 1;
+  min-width: 180px;
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  position: relative;
+  text-align: center;
+}
+
+.flow-node .f-num {
+  position: absolute;
+  top: -10px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 24px;
+  height: 24px;
+  background: #0D9488;
+  color: white;
+  border-radius: 50%;
+  font-size: 0.75rem;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.flow-node strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-top: 0.35rem;
+}
+
+.flow-node small {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+}
+
+.flow-arrow {
+  color: #94A3B8;
+  font-size: 1.2rem;
+}
+
+/* ==========================================================================
+   ESTACIÓN 2: RECEPCIÓN Y PANEL DE CONTROL
+   ========================================================================== */
+.dual-role-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.75rem;
+  margin-bottom: 2rem;
+}
+
+.role-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-md);
+  position: relative;
+}
+
+.role-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.35rem 0.8rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 1rem;
+}
+
+.role-aux .role-badge { background: var(--color-mint); color: var(--color-mint-dark); }
+.role-reg .role-badge { background: var(--color-sky); color: var(--color-sky-dark); }
+
+.role-intro {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.25rem;
+}
+
+.checklist {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.check-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: #334155;
+}
+
+.check-item input[type="checkbox"] {
+  accent-color: var(--color-mint-dark);
+  width: 18px;
+  height: 18px;
+  margin-top: 2px;
+}
+
+.alert-inline {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-sm);
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.alert-info { background: var(--color-mint); color: var(--color-mint-dark); }
+.alert-success { background: var(--color-sky); color: var(--color-sky-dark); }
+
+.tech-comparison-panel {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.tech-comparison-panel h4 {
+  font-size: 1.15rem;
+  color: #0F172A;
+  margin-bottom: 1.25rem;
+}
+
+.comparison-grid-items {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem;
+}
+
+.comp-item {
+  background: var(--bg-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  display: flex;
+  gap: 1rem;
+  border: 1px solid var(--border-light);
+}
+
+.comp-item i {
+  font-size: 1.6rem;
+  color: #0D9488;
+}
+
+.comp-item strong {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 0.25rem;
+}
+
+.comp-item p {
+  font-size: 0.85rem;
+  color: #475569;
+}
+
+/* ==========================================================================
+   ESTACIÓN 3: ALMACENAMIENTO Y DIRECTRICES TÉCNICAS
+   ========================================================================== */
+.fefo-banner {
+  background: linear-gradient(135deg, #E6F7F0, #E0F2FE);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  text-align: center;
+  margin-bottom: 2rem;
+  border: 1px solid var(--border-light);
+}
+
+.fefo-acronym {
+  font-family: var(--font-heading);
+  font-size: 2rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 0.5rem;
+}
+
+.fefo-acronym .letter {
+  color: #0D9488;
+  font-size: 2.3rem;
+}
+
+.fefo-meaning {
+  font-size: 1.05rem;
+  color: #334155;
+}
+
+.storage-tech-container {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+}
+
+.storage-intro h4 {
+  font-size: 1.2rem;
+  margin-bottom: 0.35rem;
+}
+
+.storage-intro p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  margin-bottom: 1.5rem;
+}
+
+.storage-interactive-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.storage-interactive-item {
+  background: var(--bg-subtle);
+  border: 2px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  text-align: center;
+  cursor: pointer;
+  transition: var(--transition);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.storage-interactive-item i {
+  font-size: 1.6rem;
+  color: #64748B;
+}
+
+.storage-interactive-item span {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #334155;
+}
+
+.storage-interactive-item:hover {
+  border-color: #0D9488;
+  background: #F0FDF4;
+}
+
+.storage-interactive-item.active {
+  border-color: #0D9488;
+  background: var(--color-mint);
+}
+
+.storage-interactive-item.active i,
+.storage-interactive-item.active span {
+  color: var(--color-mint-dark);
+}
+
+.storage-detail-display {
+  background: #F8FAFC;
+  border-left: 4px solid #0D9488;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.5rem;
+}
+
+.storage-detail-display h4 {
+  font-size: 1.15rem;
+  color: #0F172A;
+  margin-bottom: 0.5rem;
+}
+
+.storage-detail-display p {
+  font-size: 0.95rem;
+  color: #334155;
+  margin-bottom: 1rem;
+}
+
+/* ==========================================================================
+   ESTACIÓN 4: ROTULACIÓN Y CÓDIGO DE COLORES
+   ========================================================================== */
+.color-cards-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 1.5rem;
+}
+
+.color-card {
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+  box-shadow: var(--shadow-md);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  border: 2px solid transparent;
+  transition: var(--transition);
+}
+
+.color-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-lg);
+}
+
+.color-card-red {
+  background: linear-gradient(160deg, #FFFFFF, var(--color-rojo-bg));
+  border-color: #FECDD3;
+}
+
+.red-badge { background: var(--color-rojo-institucional); color: white; }
+
+.color-card-blue {
+  background: linear-gradient(160deg, #FFFFFF, var(--color-azul-bg));
+  border-color: #BAE6FD;
+}
+
+.blue-badge { background: var(--color-azul-institucional); color: white; }
+
+.color-card-black {
+  background: linear-gradient(160deg, #FFFFFF, var(--color-negro-bg));
+  border-color: #CBD5E1;
+}
+
+.black-badge { background: var(--color-negro-institucional); color: white; }
+
+.color-badge {
+  align-self: flex-start;
+  padding: 0.35rem 0.9rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  margin-bottom: 1rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.color-card h3 { font-size: 1.35rem; margin-bottom: 0.75rem; }
+.color-definition { font-size: 0.92rem; margin-bottom: 1.25rem; }
+
+.color-examples {
+  background: rgba(255, 255, 255, 0.88);
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.color-examples ul {
+  padding-left: 1.25rem;
+  margin-top: 0.4rem;
+  font-size: 0.88rem;
+}
+
+.color-precaution {
+  font-size: 0.85rem;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ==========================================================================
+   ESTACIÓN 5: CONTROL DE TEMPERATURA Y HUMEDAD
+   ========================================================================== */
+.temp-ranges-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.temp-box {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+  text-align: center;
+}
+
+.temp-icon {
+  font-size: 2.2rem;
+  margin-bottom: 0.75rem;
+  color: var(--color-mint-dark);
+}
+
+.box-fridge .temp-icon { color: var(--color-sky-dark); }
+
+.range-value {
+  font-family: var(--font-heading);
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin: 0.5rem 0;
+}
+
+.schedule-pills {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin: 1rem 0;
+}
+
+.pill {
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.pill-blue { background: #E0F2FE; color: #0284C7; }
+.pill-red { background: #FFE4E6; color: #E11D48; }
+
+.protocol-box {
+  background: #F8FAFC;
+  border-left: 4px solid #0D9488;
+  padding: 1.5rem;
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  box-shadow: var(--shadow-sm);
+}
+
+.protocol-box h5 {
+  color: #0F172A;
+  font-size: 1.05rem;
+  margin-bottom: 0.75rem;
+}
+
+.step-guide {
+  padding-left: 1.25rem;
+  font-size: 0.92rem;
+}
+
+.step-guide li {
+  margin-bottom: 0.4rem;
+}
+
+/* ==========================================================================
+   ESTACIÓN 6: DISPENSACIÓN Y 5 CORRECTOS
+   ========================================================================== */
+.dispensing-modalities {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.modality-box {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-sm);
+  border: 1px solid var(--border-light);
+}
+
+.mod-icon {
+  font-size: 2.2rem;
+  color: #0284C7;
+  margin-bottom: 0.75rem;
+}
+
+.mod-extra .mod-icon { color: #0D9488; }
+
+.correctos-container {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  box-shadow: var(--shadow-md);
+  border: 1px solid var(--border-light);
+  text-align: center;
+}
+
+.correctos-container h3 {
+  font-size: 1.35rem;
+  margin-bottom: 1.5rem;
+  color: #0F172A;
+}
+
+.correctos-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 1rem;
+}
+
+.correcto-pill {
+  background: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  transition: var(--transition);
+}
+
+.correcto-pill:hover {
+  background: var(--color-mint);
+  border-color: var(--color-mint-dark);
+  transform: translateY(-2px);
+}
+
+.correcto-pill .num {
+  width: 32px;
+  height: 32px;
+  background: #0D9488;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.9rem;
+}
+
+/* ==========================================================================
+   ESTACIÓN 7: MEDICAMENTOS DE CONTROL ESPECIAL
+   ========================================================================== */
+.mce-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.mce-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.mce-card:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-md);
+}
+
+.mce-icon {
+  width: 50px;
+  height: 50px;
+  background: var(--color-lavender);
+  color: var(--color-lavender-dark);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.law-tag {
+  background: var(--bg-subtle);
+  border: 1px dashed #94A3B8;
+  border-radius: var(--radius-md);
+  padding: 1rem 1.5rem;
+  font-size: 0.9rem;
+  color: #334155;
+  text-align: center;
+}
+
+/* ==========================================================================
+   ESTACIÓN 8: DISPOSICIÓN FINAL DE RESIDUOS
+   ========================================================================== */
+.waste-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.waste-step {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem 1.25rem;
+  text-align: center;
+  position: relative;
+  box-shadow: var(--shadow-sm);
+}
+
+.waste-num {
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 28px;
+  height: 28px;
+  background: #0F172A;
+  color: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: 0.8rem;
+}
+
+.waste-icon {
+  font-size: 2.2rem;
+  color: #64748B;
+  margin: 0.75rem 0;
+}
+
+.highlight-step {
+  border: 2px solid #0D9488;
+  background: linear-gradient(160deg, #FFFFFF, var(--color-mint));
+}
+
+.highlight-step .waste-icon { color: #0D9488; }
+
+.danger-warning-box {
+  background: #FFF1F2;
+  border: 1px solid #FECDD3;
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+  color: #9F1239;
+  font-size: 0.92rem;
+}
+
+/* ==========================================================================
+   ESTACIÓN 9: ÁREAS ASISTENCIALES Y VERIFICACIÓN
+   ========================================================================== */
+.areas-tabs-container {
+  background: white;
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 2rem;
+}
+
+.areas-tab-nav {
+  display: flex;
+  overflow-x: auto;
+  background: var(--bg-subtle);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.tab-btn {
+  flex: 1;
+  min-width: 170px;
+  background: none;
+  border: none;
+  padding: 1rem;
+  font-family: var(--font-base);
+  font-weight: 600;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border-bottom: 3px solid transparent;
+  transition: var(--transition);
+}
+
+.tab-btn:hover {
+  color: #0F172A;
+  background: rgba(255, 255, 255, 0.5);
+}
+
+.tab-btn.active {
+  color: #0D9488;
+  background: white;
+  border-bottom-color: #0D9488;
+  font-weight: 700;
+}
+
+.area-tab-content {
+  display: none;
+  padding: 2rem;
+}
+
+.area-tab-content.active { display: block; }
+
+.area-detail-card {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 2rem;
+  align-items: center;
+}
+
+.area-tag {
+  display: inline-block;
+  background: var(--color-sky);
+  color: var(--color-sky-dark);
+  font-size: 0.8rem;
+  font-weight: 700;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-full);
+  margin-bottom: 0.5rem;
+}
+
+.specific-storage-alert {
+  background: #FFFBEB;
+  border: 1px solid #FDE68A;
+  border-left: 4px solid #D97706;
+  border-radius: 4px;
+  padding: 0.9rem 1rem;
+  margin: 1rem 0;
+  display: flex;
+  gap: 0.75rem;
+  color: #92400E;
+  font-size: 0.9rem;
+}
+
+.specific-storage-alert i {
+  font-size: 1.4rem;
+  margin-top: 2px;
+}
+
+.bullet-list {
+  margin-top: 1rem;
+  padding-left: 1.25rem;
+}
+
+.bullet-list li {
+  margin-bottom: 0.6rem;
+  font-size: 0.95rem;
+}
+
+.service-art {
+  width: 100%;
+  height: 180px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 4rem;
+  color: white;
+}
+
+.art-partos { background: linear-gradient(135deg, #F472B6, #FB7185); }
+.art-era { background: linear-gradient(135deg, #38BDF8, #818CF8); }
+.art-eda { background: linear-gradient(135deg, #34D399, #059669); }
+.art-carro { background: linear-gradient(135deg, #F87171, #DC2626); }
+.art-ambulancia { background: linear-gradient(135deg, #FBBF24, #D97706); }
+
+/* REGLA DE LOS PRIMEROS 5 DÍAS */
+.monthly-rule-card {
+  background: linear-gradient(145deg, #FFFFFF, #FEF3C7);
+  border: 2px solid #F59E0B;
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 1.5rem;
+  box-shadow: var(--shadow-md);
+}
+
+.m-icon {
+  font-size: 3rem;
+  color: #D97706;
+}
+
+.m-content h4 {
+  color: #B45309;
+  font-size: 1.2rem;
+  margin-bottom: 0.25rem;
+}
+
+.highlight-date {
+  font-size: 1.15rem;
+  font-weight: 800;
+  color: #0F172A;
+  margin-bottom: 1rem;
+}
+
+.responsibilities-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.75rem;
+}
+
+.resp-item {
+  background: white;
+  border-radius: var(--radius-sm);
+  padding: 0.65rem 0.85rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: #334155;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+/* ==========================================================================
+   ESTACIÓN 10: CIERRE
+   ========================================================================== */
+.final-banner {
+  background: linear-gradient(135deg, #0F172A, #1E293B);
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 2.75rem 2rem;
+  text-align: center;
+  margin-bottom: 2.5rem;
+  box-shadow: var(--shadow-lg);
+}
+
+.final-quote h3 {
+  color: white;
+  font-size: 1.85rem;
+  font-weight: 800;
+  line-height: 1.35;
+  margin-bottom: 0.75rem;
+}
+
+.final-sub {
+  color: #94A3B8;
+  font-size: 1.1rem;
+}
+
+.quote-icon {
+  font-size: 2rem;
+  color: #0D9488;
+  margin-bottom: 1rem;
+}
+
+.final-action-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.f-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  border: 1px solid var(--border-light);
+  box-shadow: var(--shadow-sm);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.f-icon {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  margin: 0 auto 1rem auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.5rem;
+}
+
+.f-postest .f-icon { background: var(--color-lavender); color: var(--color-lavender-dark); }
+.f-material .f-icon { background: var(--color-mint); color: var(--color-mint-dark); }
+.f-normas .f-icon { background: var(--color-sky); color: var(--color-sky-dark); }
+
+.f-card h4 { font-size: 1.2rem; margin-bottom: 0.5rem; }
+.f-card p { font-size: 0.9rem; color: var(--text-muted); margin-bottom: 1.5rem; }
+
+.btn-final-action {
+  padding: 0.8rem 1.5rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-base);
+  font-weight: 700;
+  font-size: 0.95rem;
+  cursor: pointer;
+  border: none;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: var(--transition);
+}
+
+.btn-f-post { background: var(--color-lavender-dark); color: white; }
+.btn-f-mat { background: var(--color-mint-dark); color: white; }
+.btn-f-nor { background: var(--color-sky-dark); color: white; }
+
+.btn-final-action:hover {
+  transform: translateY(-2px);
+  filter: brightness(1.1);
+}
+
+.team-footer-card {
+  text-align: center;
+  padding: 1.5rem;
+  background: white;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-light);
+}
+
+/* ==========================================================================
+   BARRA INFERIOR (PAGINADOR Y CONTROLES)
+   ========================================================================== */
+.bottom-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.96);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--border-light);
+  padding: 0.75rem 1.5rem;
+  z-index: 90;
+  box-shadow: 0 -4px 12px rgba(0,0,0,0.05);
+}
+
+.bottom-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.btn-nav {
+  background: white;
+  border: 1px solid var(--border-light);
+  padding: 0.6rem 1.4rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-base);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #0F172A;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+}
+
+.btn-nav:hover:not(:disabled) {
+  background: var(--bg-subtle);
+  transform: translateY(-1px);
+}
+
+.btn-nav:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.btn-nav.btn-next {
+  background: linear-gradient(135deg, #0D9488, #0284C7);
+  color: white;
+  border: none;
+}
+
+.btn-nav.btn-next:hover:not(:disabled) {
+  box-shadow: 0 4px 12px rgba(13, 148, 136, 0.35);
+}
+
+.station-selector-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.station-selector-wrapper select {
+  font-family: var(--font-base);
+  font-size: 0.9rem;
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-full);
+  border: 1px solid var(--border-light);
+  background: var(--bg-subtle);
+  color: #0F172A;
+  cursor: pointer;
+  outline: none;
+}
+
+.station-indicator {
+  font-weight: 800;
+  font-size: 0.9rem;
+  color: var(--text-muted);
+}
+
+/* ==========================================================================
+   MODALES
+   ========================================================================== */
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(15, 23, 42, 0.6);
+  backdrop-filter: blur(4px);
+  z-index: 1000;
+  overflow-y: auto;
+  padding: 2rem 1rem;
+}
+
+.modal.active {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal-dialog {
+  width: 100%;
+  max-width: 600px;
+  background: white;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  overflow: hidden;
+  animation: modalIn 0.28s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.modal-dialog.modal-lg { max-width: 880px; }
+
+@keyframes modalIn {
+  from { opacity: 0; transform: scale(0.96) translateY(10px); }
+  to { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.modal-header {
+  padding: 1.5rem;
+  background: var(--bg-subtle);
+  border-bottom: 1px solid var(--border-light);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.modal-title-box {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.modal-title-box i { font-size: 1.8rem; color: #0D9488; }
+.modal-title-box h3 { font-size: 1.25rem; }
+.modal-title-box p { font-size: 0.82rem; color: var(--text-muted); }
+
+.btn-close {
+  background: none;
+  border: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--text-muted);
+  line-height: 1;
+}
+
+.btn-close:hover { color: #E11D48; }
+
+.modal-body {
+  padding: 1.75rem;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.modal-footer {
+  padding: 1.25rem 1.75rem;
+  background: var(--bg-subtle);
+  border-top: 1px solid var(--border-light);
+  display: flex;
+  justify-content: flex-end;
+  gap: 1rem;
+}
+
+.link-placeholder-box {
+  background: var(--bg-subtle);
+  border: 1px dashed #94A3B8;
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  margin: 1.25rem 0;
+  word-break: break-all;
+}
+
+.link-label {
+  display: block;
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: var(--text-muted);
+  margin-bottom: 0.25rem;
+}
+
+.link-url {
+  font-family: monospace;
+  font-size: 0.9rem;
+  color: #0284C7;
+  font-weight: 600;
+}
+
+.admin-note {
+  background: #F1F5F9;
+  border-radius: var(--radius-sm);
+  padding: 1rem;
+  font-size: 0.85rem;
+  color: #475569;
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+}
+
+/* Modal Material */
+.infographics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.5rem;
+}
+
+.info-doc-card {
+  border: 1px solid var(--border-light);
+  border-radius: var(--radius-md);
+  padding: 1.5rem;
+  background: white;
+  box-shadow: var(--shadow-sm);
+}
+
+.doc-badge {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2rem 0.6rem;
+  border-radius: var(--radius-full);
+  display: inline-block;
+  margin-bottom: 0.75rem;
+}
+
+.color-red-bg { background: #FFE4E6; color: #BE123C; }
+.color-sky-bg { background: var(--color-sky); color: var(--color-sky-dark); }
+.color-lavender-bg { background: var(--color-lavender); color: var(--color-lavender-dark); }
+
+.btn-outline-print {
+  width: 100%;
+  margin-top: 1rem;
+  background: white;
+  border: 1px solid var(--border-light);
+  padding: 0.6rem;
+  border-radius: var(--radius-full);
+  font-family: var(--font-base);
+  font-weight: 700;
+  font-size: 0.85rem;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.btn-outline-print:hover {
+  background: var(--bg-subtle);
+  border-color: #0D9488;
+  color: #0D9488;
+}
+
+/* Modal Normas */
+.laws-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.law-item {
+  border-bottom: 1px solid var(--border-light);
+  padding-bottom: 1rem;
+}
+
+.law-code {
+  font-weight: 800;
+  font-size: 0.85rem;
+  color: #0D9488;
+  display: block;
+}
+
+.law-item h4 { font-size: 1.05rem; margin: 0.2rem 0; }
+.law-item p { font-size: 0.88rem; color: #475569; }
+
+/* ==========================================================================
+   RESPONSIVIDAD
+   ========================================================================== */
+@media (max-width: 900px) {
+  .hero-title-academic { font-size: 2rem; }
+  .eval-banner { grid-template-columns: 1fr; }
+  .area-detail-card { grid-template-columns: 1fr; }
+  .service-art { height: 120px; }
+  .flow-arrow { display: none; }
+}
+
+@media (max-width: 640px) {
+  .nav-brand .hospital-sub { display: none; }
+  .hero-title-academic { font-size: 1.6rem; }
+  .hero-brand-card { flex-direction: column; text-align: center; }
+  .bottom-container { gap: 0.5rem; }
+  .station-selector-wrapper select { max-width: 140px; }
+  .btn-nav span { display: none; }
+  .nav-quick-links span { display: none; }
+}
