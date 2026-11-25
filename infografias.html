@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Material Educativo e Infografías Imprimibles | E.S.E. Centro Hospital Luis Antonio Montero</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;700;800&family=Outfit:wght@600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --primary: #0D9488;
+      --secondary: #0284C7;
+      --text: #0F172A;
+      --text-muted: #475569;
+      --bg: #F8FAFC;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.5;
+      padding: 2rem 1rem;
+    }
+    .container { max-width: 1000px; margin: 0 auto; }
+    
+    .print-bar {
+      background: white;
+      padding: 1rem 1.5rem;
+      border-radius: 12px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 2rem;
+    }
+    .btn-print {
+      background: linear-gradient(135deg, #0D9488, #0284C7);
+      color: white;
+      border: none;
+      padding: 0.75rem 1.75rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      box-shadow: 0 4px 12px rgba(13,148,136,0.3);
+    }
+    .btn-print:hover { opacity: 0.95; transform: translateY(-1px); }
+    .btn-back {
+      color: #0D9488;
+      text-decoration: none;
+      font-weight: 700;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    /* ESTILOS DE CADA LÁMINA / AFICHE (TAMAÑO CARTA / AFICHE) */
+    .sheet {
+      background: white;
+      border: 1px solid #E2E8F0;
+      border-radius: 16px;
+      padding: 2.5rem;
+      margin-bottom: 3rem;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+      position: relative;
+      page-break-after: always;
+    }
+    .sheet-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 2px solid #E2E8F0;
+      padding-bottom: 1.25rem;
+      margin-bottom: 1.5rem;
+    }
+    .sheet-brand {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .sheet-brand img {
+      height: 54px;
+      width: auto;
+      object-fit: contain;
+    }
+    .sheet-titles h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.15rem;
+      color: #0F172A;
+      font-weight: 800;
+      text-transform: uppercase;
+    }
+    .sheet-titles p {
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+    }
+    .sheet-badge {
+      background: #E6F7F0;
+      color: #0D9488;
+      font-weight: 800;
+      font-size: 0.8rem;
+      padding: 0.4rem 0.9rem;
+      border-radius: 9999px;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .sheet-main-title {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.8rem;
+      color: #0F172A;
+      text-align: center;
+      margin-bottom: 0.5rem;
+    }
+    .sheet-subtitle {
+      text-align: center;
+      font-size: 1rem;
+      color: var(--text-muted);
+      margin-bottom: 2rem;
+    }
+
+    /* AFICHE 1: CÓDIGO DE COLORES */
+    .color-grid-poster {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .poster-color-card {
+      border-radius: 12px;
+      padding: 1.5rem;
+      border: 2px solid;
+    }
+    .poster-red { background: #FFF1F2; border-color: #FECDD3; }
+    .poster-blue { background: #F0F9FF; border-color: #BAE6FD; }
+    .poster-black { background: #F8FAFC; border-color: #CBD5E1; }
+
+    .tag-color {
+      display: inline-block;
+      padding: 0.35rem 0.85rem;
+      border-radius: 9999px;
+      font-weight: 800;
+      font-size: 0.85rem;
+      color: white;
+      margin-bottom: 1rem;
+    }
+    .tag-red { background: #E11D48; }
+    .tag-blue { background: #0284C7; }
+    .tag-black { background: #0F172A; }
+
+    .poster-color-card h3 { font-size: 1.25rem; margin-bottom: 0.5rem; }
+    .poster-color-card p { font-size: 0.9rem; color: #334155; margin-bottom: 1rem; }
+    .poster-examples { background: white; padding: 0.75rem; border-radius: 8px; font-size: 0.85rem; }
+    .poster-examples strong { display: block; margin-bottom: 0.3rem; }
+    .poster-examples ul { padding-left: 1.2rem; }
+
+    /* AFICHE 2: CADENA DE FRÍO Y TEMPERATURA */
+    .temp-poster-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem;
+      margin-bottom: 2rem;
+    }
+    .temp-card-box {
+      border: 1px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 1.75rem;
+      background: #F8FAFC;
+    }
+    .temp-card-box.highlight {
+      border: 2px solid #0284C7;
+      background: #F0F9FF;
+    }
+    .temp-big-num {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2.8rem;
+      font-weight: 800;
+      color: #0F172A;
+      margin: 0.5rem 0;
+    }
+    .bicolor-rule {
+      background: white;
+      border: 1px dashed #CBD5E1;
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 1rem;
+    }
+
+    /* AFICHE 3: LISTA DE CHEQUEO ASISTENCIAL (CHECKLIST) */
+    .checklist-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 1rem;
+    }
+    .checklist-table th, .checklist-table td {
+      border: 1px solid #CBD5E1;
+      padding: 0.75rem;
+      font-size: 0.9rem;
+    }
+    .checklist-table th {
+      background: #F1F5F9;
+      color: #0F172A;
+      text-align: left;
+    }
+    .box-check { width: 30px; height: 30px; border: 2px solid #94A3B8; border-radius: 4px; margin: 0 auto; }
+
+    .sheet-footer {
+      border-top: 2px solid #E2E8F0;
+      padding-top: 1rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.85rem;
+      color: var(--text-muted);
+      font-weight: 600;
+      margin-top: 2rem;
+    }
+
+    /* REGLAS DE IMPRESIÓN OFICIAL */
+    @media print {
+      body { background: white !important; padding: 0 !important; }
+      .print-bar { display: none !important; }
+      .sheet {
+        border: none !important;
+        box-shadow: none !important;
+        margin: 0 !important;
+        padding: 1.5cm !important;
+        width: 100% !important;
+        page-break-after: always !important;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  
+  <div class="print-bar">
+    <a href="index.html" class="btn-back"><i class="fa-solid fa-arrow-left"></i> Volver a la Misión Web</a>
+    <button class="btn-print" onclick="window.print()"><i class="fa-solid fa-print"></i> Imprimir Todo el Paquete (PDF / Papel)</button>
+  </div>
+
+  <!-- ==================== LÁMINA 1: CÓDIGO DE COLORES ==================== -->
+  <div class="sheet" id="afiche-colores">
+    <div class="sheet-header">
+      <div class="sheet-brand">
+        <img src="logo.png" alt="Logo Hospital">
+        <div class="sheet-titles">
+          <h2>E.S.E. Centro Hospital Luis Antonio Montero</h2>
+          <p>Municipio de Potosí, Nariño • Servicio Farmacéutico (1.ᵉʳ Nivel)</p>
+        </div>
+      </div>
+      <span class="sheet-badge">Guía Visual de Seguridad</span>
+    </div>
+
+    <h1 class="sheet-main-title">CÓDIGO DE COLORES INSTITUCIONAL</h1>
+    <p class="sheet-subtitle">Convención semafórica obligatoria para prevenir eventos adversos de medicación</p>
+
+    <div class="color-grid-poster">
+      <!-- ROJO -->
+      <div class="poster-color-card poster-red">
+        <span class="tag-color tag-red"><i class="fa-solid fa-triangle-exclamation"></i> ROJO</span>
+        <h3>Alto Riesgo</h3>
+        <p>Fármacos con alto potencial de causar daños severos o letales si ocurre un error de dosificación o vía.</p>
+        <div class="poster-examples">
+          <strong>Ejemplos Institucionales:</strong>
+          <ul>
+            <li>Cloruro de Potasio (KCl)</li>
+            <li>Gluconato de Calcio</li>
+            <li>Oxitocina ampollas</li>
+            <li>Sulfato de Magnesio</li>
+          </ul>
+        </div>
+        <p style="margin-top:0.75rem; font-weight:700; color:#BE123C; font-size:0.8rem;">
+          <i class="fa-solid fa-shield-halved"></i> Obligatorio: Doble chequeo.
+        </p>
+      </div>
+
+      <!-- AZUL -->
+      <div class="poster-color-card poster-blue">
+        <span class="tag-color tag-blue"><i class="fa-solid fa-clone"></i> AZUL</span>
+        <h3>Medicamentos LASA</h3>
+        <p>Medicamentos con similitud fonética (suenan igual) o similitud visual (empaques casi idénticos).</p>
+        <div class="poster-examples">
+          <strong>Ejemplos Institucionales:</strong>
+          <ul>
+            <li>DOPAmis vs. DOBUTAmida</li>
+            <li>AMPICilina vs. OXACilina</li>
+            <li>CAPTOpril vs. ENALApril</li>
+          </ul>
+        </div>
+        <p style="margin-top:0.75rem; font-weight:700; color:#0369A1; font-size:0.8rem;">
+          <i class="fa-solid fa-eye"></i> Separación física en gavetas.
+        </p>
+      </div>
+
+      <!-- NEGRO -->
+      <div class="poster-color-card poster-black">
+        <span class="tag-color tag-black"><i class="fa-solid fa-hourglass-end"></i> NEGRO</span>
+        <h3>Vencimiento &lt; 4 Meses</h3>
+        <p>Alerta semafórica de expiración crítica para priorizar su rotación o gestionar el canje con proveedor.</p>
+        <div class="poster-examples">
+          <strong>Acciones Clave:</strong>
+          <ul>
+            <li>Etiquetar inmediatamente con sticker negro.</li>
+            <li>Ubicar ADELANTE en el estante.</li>
+            <li>Priorizar su consumo inmediato.</li>
+          </ul>
+        </div>
+        <p style="margin-top:0.75rem; font-weight:700; color:#0F172A; font-size:0.8rem;">
+          <i class="fa-solid fa-rotate"></i> Aplicación estricta de FEFO.
+        </p>
+      </div>
+    </div>
+
+    <div class="sheet-footer">
+      <span>Misión: Medicamento Seguro • "Cada proceso cuenta, cada persona protege"</span>
+      <span>Vigencia: 2026 - 2027</span>
+    </div>
+  </div>
+
+  <!-- ==================== LÁMINA 2: FEFO Y CADENA DE FRÍO ==================== -->
+  <div class="sheet" id="afiche-frio">
+    <div class="sheet-header">
+      <div class="sheet-brand">
+        <img src="logo.png" alt="Logo Hospital">
+        <div class="sheet-titles">
+          <h2>E.S.E. Centro Hospital Luis Antonio Montero</h2>
+          <p>Municipio de Potosí, Nariño • Servicio Farmacéutico (1.ᵉʳ Nivel)</p>
+        </div>
+      </div>
+      <span class="sheet-badge">Conservación & Rotación</span>
+    </div>
+
+    <h1 class="sheet-main-title">SISTEMA FEFO & CADENA DE FRÍO</h1>
+    <p class="sheet-subtitle">Parámetros técnicos de estabilidad farmacológica y almacenamiento</p>
+
+    <div class="temp-poster-grid">
+      <div class="temp-card-box">
+        <h3 style="color:#0D9488;"><i class="fa-solid fa-repeat"></i> Sistema FEFO</h3>
+        <p style="font-size:0.9rem; margin-top:0.25rem;"><em>First Expired, First Out (Primero en vencer, primero en salir)</em></p>
+        <div style="background:white; padding:1rem; border-radius:8px; margin:1rem 0; border:1px solid #CBD5E1;">
+          <ul style="padding-left:1.2rem; font-size:0.9rem;">
+            <li><strong>ADELANTE:</strong> Medicamentos con vencimiento más próximo.</li>
+            <li><strong>ATRÁS:</strong> Medicamentos con fecha de expiración más lejana.</li>
+            <li>Nunca acomodar por comodidad de espacio, siempre por fecha de lote.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="temp-card-box highlight">
+        <h3 style="color:#0284C7;"><i class="fa-solid fa-snowflake"></i> Cadena de Frío</h3>
+        <div class="temp-big-num">2 °C a 8 °C</div>
+        <p style="font-size:0.9rem; color:#0369A1;"><strong>¡NUNCA CONGELAR (&lt;2°C)!</strong> Biológicos, Oxitocina e Insulinas.</p>
+        <div class="bicolor-rule">
+          <strong style="font-size:0.85rem; display:block; margin-bottom:0.25rem;">Regla Bicolor de Registro Diario:</strong>
+          <span style="color:#0284C7; font-weight:700;"><i class="fa-solid fa-sun"></i> Turno Mañana: Esfero AZUL</span><br>
+          <span style="color:#E11D48; font-weight:700;"><i class="fa-solid fa-moon"></i> Turno Tarde: Esfero ROJO</span>
+        </div>
+      </div>
+    </div>
+
+    <div style="background:#FFF1F2; border-left:4px solid #E11D48; padding:1rem; border-radius:0 8px 8px 0; margin-top:1rem;">
+      <strong style="color:#9F1239; display:block; margin-bottom:0.25rem;"><i class="fa-solid fa-triangle-exclamation"></i> PROTOCOLO DE DESVIACIÓN DE FRÍO:</strong>
+      <span style="font-size:0.88rem; color:#881337;">1. No abrir la nevera • 2. Notificar inmediatamente a la Regente de Farmacia y Mantenimiento • 3. Trasladar insumos a termos portátiles con paquetes refrigerantes a 2°C-8°C.</span>
+    </div>
+
+    <div class="sheet-footer">
+      <span>Resolución 1403 de 2007 • Decreto 780 de 2016</span>
+      <span>Responsable: Regente de Farmacia</span>
+    </div>
+  </div>
+
+  <!-- ==================== LÁMINA 3: LISTA DE CHEQUEO MENSUAL ==================== -->
+  <div class="sheet" id="afiche-checklist">
+    <div class="sheet-header">
+      <div class="sheet-brand">
+        <img src="logo.png" alt="Logo Hospital">
+        <div class="sheet-titles">
+          <h2>E.S.E. Centro Hospital Luis Antonio Montero</h2>
+          <p>Municipio de Potosí, Nariño • Servicio Farmacéutico (1.ᵉʳ Nivel)</p>
+        </div>
+      </div>
+      <span class="sheet-badge">Formato de Vigilancia</span>
+    </div>
+
+    <h1 class="sheet-main-title">VERIFICACIÓN ASISTENCIAL MENSUAL</h1>
+    <p class="sheet-subtitle"><strong>¡Obligatorio durante los primeros CINCO (5) días de cada mes!</strong></p>
+
+    <div style="display:flex; justify-content:space-between; margin-bottom:1rem; font-size:0.9rem; font-weight:600; background:#F1F5F9; padding:0.75rem 1rem; border-radius:8px;">
+      <span>Servicio: ____________________________________</span>
+      <span>Mes / Año: _______________</span>
+      <span>Responsable: __________________________</span>
+    </div>
+
+    <table class="checklist-table">
+      <thead>
+        <tr>
+          <th style="width:50px;">Item</th>
+          <th>Criterio Técnico a Evaluar en el Botiquín del Servicio</th>
+          <th style="width:70px; text-align:center;">Cumple</th>
+          <th style="width:70px; text-align:center;">No Cumple</th>
+          <th>Observaciones / Acciones Tomadas</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td><strong>Inventario Físico:</strong> El 100% de los medicamentos y dispositivos coincide con el stock autorizado del servicio.</td>
+          <td><div class="box-check"></div></td>
+          <td><div class="box-check"></div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td><strong>Fechas de Vencimiento:</strong> Se revisó fecha de caducidad en todas las unidades sin excepción. No hay productos vencidos.</td>
+          <td><div class="box-check"></div></td>
+          <td><div class="box-check"></div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td><strong>Semáforo Negro (&lt; 4 meses):</strong> Los insumos con vencimiento inferior a 4 meses tienen sticker NEGRO y están priorizados.</td>
+          <td><div class="box-check"></div></td>
+          <td><div class="box-check"></div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>4</td>
+          <td><strong>Condiciones Físicas:</strong> Envases limpios, rótulos legibles, sin roturas, sin cambio de color o precipitaciones.</td>
+          <td><div class="box-check"></div></td>
+          <td><div class="box-check"></div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>5</td>
+          <td><strong>Carro de Paro / Botiquín de Emergencia:</strong> Candado intacto con número serial registrado, laringoscopio y fuentes probadas.</td>
+          <td><div class="box-check"></div></td>
+          <td><div class="box-check"></div></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td><strong>Termohigrómetro:</strong> Registro diario al día (azul en la mañana, rojo en la tarde) y sin desviaciones críticas.</td>
+          <td><div class="box-check"></div></td>
+          <td><div class="box-check"></div></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+    <div style="display:flex; justify-content:space-around; margin-top:2.5rem; text-align:center; font-size:0.9rem;">
+      <div style="border-top:1px solid #0F172A; width:220px; padding-top:0.4rem;">
+        Firma Responsable del Servicio
+      </div>
+      <div style="border-top:1px solid #0F172A; width:220px; padding-top:0.4rem;">
+        Firma Regente de Farmacia
+      </div>
+    </div>
+
+    <div class="sheet-footer">
+      <span>E.S.E. Centro Hospital Luis Antonio Montero • Potosí, Nariño</span>
+      <span>Comité de Seguridad del Paciente</span>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>
